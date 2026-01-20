@@ -6,7 +6,7 @@
     <title>trüfrü Galentine's | Dublin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -36,9 +36,28 @@
             color: var(--white);
             padding: 14px 24px;
             text-align: center;
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
 
         /* ============================================
@@ -57,45 +76,38 @@
             overflow: hidden;
         }
 
-        .float-decor {
+        /* Floating brand berries */
+        .float-berry {
             position: absolute;
             pointer-events: none;
             z-index: 1;
         }
-        .float-decor.f1 { width: 130px; top: 5%; left: 5%; animation: bobble 8s ease-in-out infinite; }
-        .float-decor.f2 { width: 100px; top: 8%; right: 8%; animation: bobble 7s ease-in-out infinite 1s; }
-        .float-decor.f3 { width: 90px; bottom: 30%; left: 8%; animation: bobble 9s ease-in-out infinite 2s; }
-        .float-decor.f4 { width: 110px; bottom: 20%; right: 5%; animation: bobble 6s ease-in-out infinite 0.5s; }
-        .float-decor.f5 { width: 80px; top: 25%; left: 3%; animation: bobble 10s ease-in-out infinite 3s; }
-        .float-decor.f6 { width: 70px; top: 55%; right: 3%; animation: bobble 8s ease-in-out infinite 1.5s; }
-        .float-decor.f7 { width: 95px; bottom: 45%; left: 12%; animation: bobble 7s ease-in-out infinite 2.5s; }
-        .float-decor.f8 { width: 85px; top: 40%; right: 12%; animation: bobble 9s ease-in-out infinite 0.8s; }
-        .float-decor.f9 { width: 75px; bottom: 12%; left: 15%; animation: bobble 6s ease-in-out infinite 1.2s; }
-        .float-decor.f10 { width: 65px; top: 70%; right: 15%; animation: bobble 8s ease-in-out infinite 3.5s; }
+        .float-berry.b1 { width: 120px; top: 5%; left: 3%; animation: float 8s ease-in-out infinite; }
+        .float-berry.b2 { width: 90px; top: 8%; right: 5%; animation: float 7s ease-in-out infinite 1s; }
+        .float-berry.b3 { width: 80px; bottom: 30%; left: 5%; animation: float 9s ease-in-out infinite 2s; }
+        .float-berry.b4 { width: 100px; bottom: 15%; right: 3%; animation: float 6s ease-in-out infinite 0.5s; }
+        .float-berry.b5 { width: 70px; top: 30%; left: 8%; animation: float 10s ease-in-out infinite 3s; }
+        .float-berry.b6 { width: 60px; top: 50%; right: 8%; animation: float 8s ease-in-out infinite 1.5s; }
+        .float-berry.b7 { width: 85px; bottom: 40%; left: 10%; animation: float 7s ease-in-out infinite 2.5s; }
+        .float-berry.b8 { width: 75px; top: 65%; right: 10%; animation: float 9s ease-in-out infinite 0.8s; }
 
-        .emoji-float {
+        /* Scattered emoji decorations */
+        .scatter {
             position: absolute;
             pointer-events: none;
             z-index: 1;
-            font-size: 40px;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
         }
-        .emoji-float.kiss1 { top: 12%; left: 18%; font-size: 35px; animation: bobble 7s ease-in-out infinite 0.3s; }
-        .emoji-float.kiss2 { top: 65%; right: 20%; font-size: 28px; animation: bobble 8s ease-in-out infinite 1.8s; }
-        .emoji-float.kiss3 { bottom: 35%; left: 20%; font-size: 32px; animation: bobble 6s ease-in-out infinite 2.8s; }
-        .emoji-float.kiss4 { top: 35%; right: 22%; font-size: 26px; animation: bobble 9s ease-in-out infinite 0.6s; }
-        .emoji-float.rose1 { top: 18%; right: 18%; font-size: 38px; animation: bobble 8s ease-in-out infinite 1.3s; }
-        .emoji-float.rose2 { bottom: 25%; right: 25%; font-size: 30px; animation: bobble 7s ease-in-out infinite 2.2s; }
-        .emoji-float.rose3 { top: 48%; left: 22%; font-size: 34px; animation: bobble 9s ease-in-out infinite 0.9s; }
-        .emoji-float.rose4 { bottom: 50%; left: 5%; font-size: 28px; animation: bobble 6s ease-in-out infinite 3.2s; }
-        .emoji-float.heart1 { top: 30%; left: 28%; font-size: 24px; animation: bobble 7s ease-in-out infinite 1.5s; }
-        .emoji-float.heart2 { bottom: 18%; right: 30%; font-size: 22px; animation: bobble 8s ease-in-out infinite 2.5s; }
-
-        @keyframes bobble {
-            0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
-            33% { transform: translateY(-25px) rotate(3deg) scale(1.02); }
-            66% { transform: translateY(-10px) rotate(-2deg) scale(0.98); }
-        }
+        .scatter.e1 { top: 12%; left: 18%; font-size: 32px; animation: drift 7s ease-in-out infinite 0.3s; }
+        .scatter.e2 { top: 60%; right: 18%; font-size: 26px; animation: drift 8s ease-in-out infinite 1.8s; }
+        .scatter.e3 { bottom: 35%; left: 15%; font-size: 30px; animation: drift 6s ease-in-out infinite 2.8s; }
+        .scatter.e4 { top: 38%; right: 20%; font-size: 24px; animation: drift 9s ease-in-out infinite 0.6s; }
+        .scatter.e5 { top: 20%; right: 15%; font-size: 34px; animation: drift 8s ease-in-out infinite 1.3s; }
+        .scatter.e6 { bottom: 22%; right: 22%; font-size: 28px; animation: drift 7s ease-in-out infinite 2.2s; }
+        .scatter.e7 { top: 45%; left: 20%; font-size: 30px; animation: drift 9s ease-in-out infinite 0.9s; }
+        .scatter.e8 { bottom: 45%; left: 6%; font-size: 26px; animation: drift 6s ease-in-out infinite 3.2s; }
+        .scatter.e9 { top: 28%; left: 25%; font-size: 22px; animation: sparkle 4s ease-in-out infinite 1.5s; }
+        .scatter.e10 { bottom: 18%; right: 28%; font-size: 20px; animation: sparkle 5s ease-in-out infinite 2.5s; }
 
         .hero-content {
             position: relative;
@@ -103,196 +115,286 @@
             max-width: 800px;
         }
 
-        .hero-logo {
-            width: 280px;
-            margin: 0 auto 20px;
-            filter: drop-shadow(0 8px 30px rgba(0,0,0,0.15));
-        }
-
         .hero-invite {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(18px, 3vw, 24px);
+            font-family: 'Caveat', cursive;
+            font-size: clamp(28px, 5vw, 42px);
             color: var(--white);
-            font-style: italic;
             margin-bottom: 12px;
             opacity: 0.95;
         }
 
+        .hero-logo {
+            width: 320px;
+            margin: 0 auto 0;
+            filter: drop-shadow(0 8px 30px rgba(0,0,0,0.15));
+        }
+
         .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(70px, 18vw, 160px);
+            font-family: 'Caveat', cursive;
+            font-size: clamp(80px, 20vw, 180px);
             font-weight: 700;
             color: var(--white);
-            line-height: 0.85;
-            margin-bottom: 16px;
+            line-height: 0.8;
+            margin-bottom: 20px;
             text-shadow: 0 6px 40px rgba(0,0,0,0.2);
         }
 
         .hero-details {
-            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
             color: var(--white);
-            opacity: 0.9;
-            margin-bottom: 12px;
-            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 8px;
         }
 
         .hero-venue {
-            font-size: 16px;
+            font-family: 'Caveat', cursive;
+            font-size: 24px;
             color: var(--tf-ivory);
             margin-bottom: 36px;
-            font-weight: 300;
         }
 
         .hero-cta {
             display: inline-block;
-            background: var(--tf-ivory);
+            background: var(--white);
             color: var(--tf-red);
-            padding: 20px 56px;
+            padding: 18px 50px;
             border-radius: 50px;
-            font-size: 18px;
+            font-family: 'Caveat', cursive;
+            font-size: 26px;
             font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .hero-cta::after {
+            content: ' 💕';
         }
 
         .hero-cta:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            transform: translateY(-5px) scale(1.05) rotate(-2deg);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
         }
 
         /* ============================================
-           PHOTO MOMENT
+           PHOTOS - Polaroid collage style
            ============================================ */
         .photos {
             background: var(--white);
-            padding: 50px 24px;
+            padding: 70px 24px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .photos-intro {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(24px, 4vw, 36px);
+        .photos-scatter {
+            position: absolute;
+            pointer-events: none;
+            font-size: 24px;
+            opacity: 0.5;
+            animation: drift 8s ease-in-out infinite;
+        }
+        .photos-scatter.ps1 { top: 10%; left: 5%; }
+        .photos-scatter.ps2 { top: 15%; right: 8%; animation-delay: 1s; }
+        .photos-scatter.ps3 { bottom: 10%; left: 10%; animation-delay: 2s; }
+        .photos-scatter.ps4 { bottom: 15%; right: 5%; animation-delay: 0.5s; }
+
+        .photos-title {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(36px, 6vw, 52px);
             color: var(--tf-red);
-            font-style: italic;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .photo-grid {
+        .polaroid-grid {
             display: flex;
-            gap: 16px;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
-            max-width: 1000px;
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
+            position: relative;
         }
 
-        .photo-grid img {
-            width: 220px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 16px;
+        .polaroid {
+            background: var(--white);
+            padding: 12px 12px 45px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-            transition: transform 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
-        .photo-grid img:nth-child(even) {
-            transform: rotate(2deg);
+        .polaroid::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 12px;
+            background: rgba(230, 134, 153, 0.3);
+            border-radius: 2px;
         }
 
-        .photo-grid img:nth-child(odd) {
-            transform: rotate(-2deg);
+        .polaroid img {
+            width: 220px;
+            height: 260px;
+            object-fit: cover;
         }
 
-        .photo-grid img:hover {
-            transform: scale(1.05) rotate(0deg);
-            z-index: 2;
+        .polaroid-caption {
+            font-family: 'Caveat', cursive;
+            font-size: 20px;
+            color: var(--text-warm);
+            text-align: center;
+            margin-top: 10px;
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+        }
+
+        .polaroid:nth-child(1) { transform: rotate(-6deg); }
+        .polaroid:nth-child(2) { transform: rotate(4deg) translateY(-20px); }
+        .polaroid:nth-child(3) { transform: rotate(-3deg); }
+        .polaroid:nth-child(4) { transform: rotate(5deg) translateY(-10px); }
+
+        .polaroid:hover {
+            transform: scale(1.08) rotate(0deg) !important;
+            z-index: 10;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
         /* ============================================
            THE LINEUP
            ============================================ */
         .lineup {
-            background: var(--tf-light-pink);
+            background: linear-gradient(180deg, var(--tf-light-pink) 0%, var(--tf-light-ivory) 100%);
             padding: 80px 24px;
             position: relative;
             overflow: hidden;
         }
 
-        .lineup-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .lineup-image {
-            position: relative;
-        }
-
-        .lineup-image > img:first-child {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
-        }
-
-        .lineup-image .float-berry {
+        .lineup-scatter {
             position: absolute;
-            width: 80px;
             pointer-events: none;
+            font-size: 28px;
+            opacity: 0.5;
+            animation: drift 8s ease-in-out infinite;
         }
-        .lineup-image .float-berry.b1 { top: -30px; right: -20px; animation: bobble 6s ease-in-out infinite; }
-        .lineup-image .float-berry.b2 { bottom: -25px; left: -25px; animation: bobble 7s ease-in-out infinite 1s; }
+        .lineup-scatter.ls1 { top: 10%; left: 8%; }
+        .lineup-scatter.ls2 { top: 20%; right: 10%; animation-delay: 1s; }
+        .lineup-scatter.ls3 { top: 50%; left: 5%; animation-delay: 2s; }
+        .lineup-scatter.ls4 { top: 60%; right: 6%; animation-delay: 0.5s; }
+        .lineup-scatter.ls5 { bottom: 20%; left: 12%; animation-delay: 1.5s; }
+        .lineup-scatter.ls6 { bottom: 25%; right: 12%; animation-delay: 2.5s; }
 
-        .lineup-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(42px, 7vw, 64px);
+        .lineup-berry {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.4;
+        }
+        .lineup-berry.lb1 { width: 100px; top: 15%; right: 3%; animation: float 7s ease-in-out infinite; }
+        .lineup-berry.lb2 { width: 80px; bottom: 10%; left: 5%; animation: float 8s ease-in-out infinite 1s; }
+
+        .lineup-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .lineup-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .lineup-header h2 {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(52px, 10vw, 80px);
             color: var(--tf-red);
-            margin-bottom: 12px;
-            font-style: italic;
-            line-height: 1;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
-        .lineup-text .lineup-sub {
+        .lineup-header p {
+            font-family: 'Playfair Display', serif;
             font-size: 18px;
             color: var(--text-warm);
-            margin-bottom: 36px;
+            font-style: italic;
             opacity: 0.8;
         }
 
-        .lineup-list {
-            list-style: none;
+        .lineup-polaroids {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0;
+            margin-bottom: 50px;
+            position: relative;
+            min-height: 300px;
         }
 
-        .lineup-list li {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(22px, 4vw, 32px);
+        .lineup-polaroid {
+            background: var(--white);
+            padding: 10px 10px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            position: absolute;
+            transition: all 0.4s ease;
+        }
+
+        .lineup-polaroid img {
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .lineup-polaroid span {
+            font-family: 'Caveat', cursive;
+            font-size: 18px;
             color: var(--text-warm);
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(230, 134, 153, 0.3);
-            font-style: italic;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .lineup-polaroid:nth-child(1) { transform: rotate(-10deg) translateX(-160px); z-index: 1; }
+        .lineup-polaroid:nth-child(2) { transform: rotate(5deg) translateX(0) translateY(-20px); z-index: 3; }
+        .lineup-polaroid:nth-child(3) { transform: rotate(-4deg) translateX(160px); z-index: 2; }
+
+        .lineup-polaroid:hover {
+            transform: scale(1.1) rotate(0deg) translateX(0) translateY(0) !important;
+            z-index: 10 !important;
+        }
+
+        .lineup-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px 36px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .lineup-item {
+            font-family: 'Caveat', cursive;
+            font-size: clamp(26px, 4vw, 34px);
+            color: var(--tf-red);
             transition: all 0.3s ease;
         }
 
-        .lineup-list li:last-child {
-            border-bottom: none;
+        .lineup-item::before {
+            content: '♡ ';
+            color: var(--tf-pink);
         }
 
-        .lineup-list li:hover {
-            color: var(--tf-red);
-            padding-left: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .lineup-inner {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .lineup-text { text-align: center; }
-            .lineup-image { order: -1; max-width: 400px; margin: 0 auto; }
+        .lineup-item:hover {
+            transform: scale(1.1) rotate(-3deg);
+            color: var(--tf-pink);
         }
 
         /* ============================================
@@ -306,25 +408,47 @@
             overflow: hidden;
         }
 
-        .cta-decor {
+        .cta-scatter {
             position: absolute;
             pointer-events: none;
-            opacity: 0.15;
+            font-size: 30px;
+            opacity: 0.3;
+            animation: drift 8s ease-in-out infinite;
         }
-        .cta-decor.c1 { width: 250px; left: -80px; top: 50%; transform: translateY(-50%); }
-        .cta-decor.c2 { width: 200px; right: -60px; top: 50%; transform: translateY(-50%); }
+        .cta-scatter.cs1 { top: 15%; left: 10%; }
+        .cta-scatter.cs2 { top: 25%; right: 15%; animation-delay: 1s; }
+        .cta-scatter.cs3 { bottom: 20%; left: 15%; animation-delay: 2s; }
+        .cta-scatter.cs4 { bottom: 30%; right: 10%; animation-delay: 0.5s; }
+        .cta-scatter.cs5 { top: 50%; left: 5%; animation-delay: 1.5s; font-size: 24px; }
+        .cta-scatter.cs6 { top: 40%; right: 5%; animation-delay: 2.5s; font-size: 26px; }
+
+        .cta-berry {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.2;
+        }
+        .cta-berry.cb1 { width: 180px; left: -40px; top: 50%; transform: translateY(-50%); }
+        .cta-berry.cb2 { width: 150px; right: -30px; top: 50%; transform: translateY(-50%); }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
 
         .cta-final h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 10vw, 80px);
+            font-family: 'Caveat', cursive;
+            font-size: clamp(50px, 12vw, 100px);
             color: var(--white);
-            margin-bottom: 16px;
-            font-style: italic;
+            margin-bottom: 12px;
+            font-weight: 700;
+            line-height: 1;
         }
 
         .cta-final p {
-            font-size: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
             color: var(--white);
+            font-style: italic;
             opacity: 0.9;
             margin-bottom: 40px;
         }
@@ -333,18 +457,21 @@
             display: inline-block;
             background: var(--white);
             color: var(--tf-red);
-            padding: 22px 64px;
+            padding: 20px 60px;
             border-radius: 50px;
-            font-size: 18px;
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
             transition: all 0.3s ease;
             box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
+        .cta-btn::after {
+            content: ' ✨';
+        }
+
         .cta-btn:hover {
-            transform: translateY(-5px) scale(1.05);
+            transform: translateY(-5px) scale(1.05) rotate(2deg);
             box-shadow: 0 25px 60px rgba(0,0,0,0.25);
         }
 
@@ -354,28 +481,67 @@
         .footer {
             background: var(--text-warm);
             color: var(--tf-ivory);
-            padding: 48px 24px;
+            padding: 50px 24px;
             text-align: center;
+            position: relative;
+        }
+
+        .footer-decor {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            opacity: 0.3;
         }
 
         .footer-logo {
-            width: 140px;
+            width: 150px;
             margin: 0 auto 24px;
         }
 
         .footer p {
-            font-size: 14px;
-            opacity: 0.7;
+            font-family: 'Caveat', cursive;
+            font-size: 18px;
+            opacity: 0.8;
             margin-bottom: 6px;
         }
 
-        /* Mobile */
+        .footer-hearts {
+            margin-top: 20px;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+
+        /* ============================================
+           MOBILE
+           ============================================ */
         @media (max-width: 768px) {
-            .float-decor { opacity: 0.5; }
-            .float-decor.f5, .float-decor.f6, .float-decor.f7, .float-decor.f8 { display: none; }
-            .emoji-float { font-size: 24px !important; }
-            .hero-logo { width: 200px; }
-            .photo-grid img { width: 160px; height: 200px; }
+            .float-berry { opacity: 0.4; }
+            .float-berry.b5, .float-berry.b6, .float-berry.b7, .float-berry.b8 { display: none; }
+            .scatter { font-size: 20px !important; opacity: 0.4; }
+            .hero-logo { width: 240px; }
+
+            .polaroid img { width: 160px; height: 200px; }
+            .polaroid:nth-child(4) { display: none; }
+            .photos-scatter { display: none; }
+
+            .lineup-polaroids {
+                flex-direction: column;
+                align-items: center;
+                min-height: auto;
+                gap: 20px;
+            }
+            .lineup-polaroid {
+                position: relative !important;
+                transform: rotate(-3deg) !important;
+            }
+            .lineup-polaroid:nth-child(2) { transform: rotate(3deg) !important; }
+            .lineup-polaroid:nth-child(3) { transform: rotate(-2deg) !important; }
+            .lineup-scatter, .lineup-berry { display: none; }
+
+            .cta-scatter { font-size: 22px !important; }
+            .cta-berry { display: none; }
         }
 
         /* Reveal animation */
@@ -393,42 +559,36 @@
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        8 February 2026 · trüfrü Galentine's
+        ✨ 8 February 2026 · trüfrü Galentine's ✨
     </div>
 
     <!-- Hero -->
     <section class="hero">
-        <!-- Floating berries -->
-        <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f1">
-        <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f2">
-        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="float-decor f3">
-        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-decor f4">
-        <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f5">
-        <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f6">
-        <img src="Branded assets/Strawberry_2 (2).png" alt="" class="float-decor f7">
-        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-decor f8">
-        <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f9">
-        <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f10">
+        <!-- Floating brand berries -->
+        <img src="Branded assets/Strawberry_1.png" alt="" class="float-berry b1">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="float-berry b2">
+        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="float-berry b3">
+        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-berry b4">
+        <img src="Branded assets/Strawberry_1.png" alt="" class="float-berry b5">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="float-berry b6">
+        <img src="Branded assets/Strawberry_2 (2).png" alt="" class="float-berry b7">
+        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-berry b8">
 
-        <!-- Kisses -->
-        <span class="emoji-float kiss1">💋</span>
-        <span class="emoji-float kiss2">💋</span>
-        <span class="emoji-float kiss3">💋</span>
-        <span class="emoji-float kiss4">💋</span>
-
-        <!-- Roses -->
-        <span class="emoji-float rose1">🌹</span>
-        <span class="emoji-float rose2">🌹</span>
-        <span class="emoji-float rose3">🌹</span>
-        <span class="emoji-float rose4">🌹</span>
-
-        <!-- Hearts -->
-        <span class="emoji-float heart1">🩷</span>
-        <span class="emoji-float heart2">🩷</span>
+        <!-- Scattered romantic elements -->
+        <span class="scatter e1">💋</span>
+        <span class="scatter e2">💋</span>
+        <span class="scatter e3">🩷</span>
+        <span class="scatter e4">💋</span>
+        <span class="scatter e5">🌹</span>
+        <span class="scatter e6">🩷</span>
+        <span class="scatter e7">🌹</span>
+        <span class="scatter e8">💋</span>
+        <span class="scatter e9">✨</span>
+        <span class="scatter e10">✨</span>
 
         <div class="hero-content">
+            <p class="hero-invite">You're invited to...</p>
             <img src="Branded assets/Trü Frü Logo_Ivory_long.png" alt="trü frü" class="hero-logo">
-            <p class="hero-invite">You're invited to</p>
             <h1 class="hero-title">Galentine's</h1>
             <p class="hero-details">Saturday, 8 February 2026</p>
             <p class="hero-venue">Hen's Teeth · Blackpitts, Dublin 8</p>
@@ -438,52 +598,108 @@
 
     <!-- Photos -->
     <section class="photos reveal">
-        <p class="photos-intro">A taste of what's to come...</p>
-        <div class="photo-grid">
-            <img src="Branded assets/269A8338 (2) (2).jpg" alt="">
-            <img src="Branded assets/269A8367 (1).jpg" alt="">
-            <img src="Branded assets/269A7869 (2) (2).jpg" alt="">
-            <img src="Branded assets/269A8317.jpg" alt="">
+        <span class="photos-scatter ps1">🩷</span>
+        <span class="photos-scatter ps2">✨</span>
+        <span class="photos-scatter ps3">💋</span>
+        <span class="photos-scatter ps4">🌹</span>
+
+        <h2 class="photos-title">A taste of what's to come... 💕</h2>
+
+        <div class="polaroid-grid">
+            <div class="polaroid">
+                <img src="Branded assets/269A8338 (2) (2).jpg" alt="">
+                <span class="polaroid-caption">besties only 💕</span>
+            </div>
+            <div class="polaroid">
+                <img src="Branded assets/269A8367 (1).jpg" alt="">
+                <span class="polaroid-caption">making memories ✨</span>
+            </div>
+            <div class="polaroid">
+                <img src="Branded assets/269A7869 (2) (2).jpg" alt="">
+                <span class="polaroid-caption">the crew 🩷</span>
+            </div>
+            <div class="polaroid">
+                <img src="Branded assets/269A8317.jpg" alt="">
+                <span class="polaroid-caption">good times only 💋</span>
+            </div>
         </div>
     </section>
 
     <!-- The Lineup -->
     <section class="lineup reveal">
-        <div class="lineup-inner">
-            <div class="lineup-image">
-                <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="trüfrü boxes">
-                <img src="Branded assets/Strawberry_1.png" alt="" class="float-berry b1">
-                <img src="Branded assets/Raspberry_1.png" alt="" class="float-berry b2">
-            </div>
-            <div class="lineup-text">
+        <!-- Scattered elements -->
+        <span class="lineup-scatter ls1">💋</span>
+        <span class="lineup-scatter ls2">🩷</span>
+        <span class="lineup-scatter ls3">✨</span>
+        <span class="lineup-scatter ls4">💋</span>
+        <span class="lineup-scatter ls5">🌹</span>
+        <span class="lineup-scatter ls6">🩷</span>
+
+        <!-- Brand berries -->
+        <img src="Branded assets/Strawberry_1.png" alt="" class="lineup-berry lb1">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="lineup-berry lb2">
+
+        <div class="lineup-content">
+            <div class="lineup-header">
                 <h2>The Lineup</h2>
-                <p class="lineup-sub">An afternoon of cocktails, creativity & connection (and trüfrü)</p>
-                <ul class="lineup-list">
-                    <li>Cocktails & Bites</li>
-                    <li>Phone Charm Workshop</li>
-                    <li>Mixology Masterclass</li>
-                    <li>Sweet Treats</li>
-                    <li>Good Vibes Only</li>
-                </ul>
+                <p>An afternoon of cocktails, creativity & connection (and trüfrü)</p>
+            </div>
+
+            <!-- Polaroid collage -->
+            <div class="lineup-polaroids">
+                <div class="lineup-polaroid">
+                    <img src="Branded assets/269A8491.jpg" alt="">
+                    <span>girl time 💕</span>
+                </div>
+                <div class="lineup-polaroid">
+                    <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="">
+                    <span>the good stuff ✨</span>
+                </div>
+                <div class="lineup-polaroid">
+                    <img src="Branded assets/269A8758.jpg" alt="">
+                    <span>cheers! 🥂</span>
+                </div>
+            </div>
+
+            <!-- Handwritten list -->
+            <div class="lineup-list">
+                <span class="lineup-item">Cocktails & Bites</span>
+                <span class="lineup-item">Phone Charm Workshop</span>
+                <span class="lineup-item">Mixology Masterclass</span>
+                <span class="lineup-item">Sweet Treats</span>
+                <span class="lineup-item">Good Vibes Only</span>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
     <section class="cta-final" id="register">
-        <img src="Branded assets/HC_StrawMilk_BackClump.png" alt="" class="cta-decor c1">
-        <img src="Branded assets/HC_DC_Raspberry_Back_Clump (1).png" alt="" class="cta-decor c2">
+        <!-- Scattered elements -->
+        <span class="cta-scatter cs1">💋</span>
+        <span class="cta-scatter cs2">🩷</span>
+        <span class="cta-scatter cs3">✨</span>
+        <span class="cta-scatter cs4">🌹</span>
+        <span class="cta-scatter cs5">💋</span>
+        <span class="cta-scatter cs6">🩷</span>
 
-        <h2>See You There?</h2>
-        <p>It's free — but spots are limited</p>
-        <a href="#" class="cta-btn">Get Your Free Ticket</a>
+        <!-- Brand berries -->
+        <img src="Branded assets/HC_StrawMilk_BackClump.png" alt="" class="cta-berry cb1">
+        <img src="Branded assets/HC_DC_Raspberry_Back_Clump (1).png" alt="" class="cta-berry cb2">
+
+        <div class="cta-content">
+            <h2>See You There?</h2>
+            <p>It's free — but spots are limited!</p>
+            <a href="#" class="cta-btn">Get Your Free Ticket</a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-decor">💋 🩷 ✨ 🩷 💋</div>
         <img src="Branded assets/Trü Frü Logo_White_long.png" alt="trü frü" class="footer-logo">
         <p>© 2026 trüfrü</p>
         <p>Created by Headcase</p>
+        <div class="footer-hearts">🩷 💋 🩷</div>
     </footer>
 
     <script>
