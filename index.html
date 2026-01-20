@@ -6,56 +6,29 @@
     <title>trüfrü Galentine's Day | Dublin | 8 February 2026</title>
     <meta name="description" content="Your TrüFrü Crew Brings Out The TrüFrü You. Join us for Galentine's Day at Hen's Teeth, Dublin.">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Your TrüFrü Galentine's Day">
+    <meta property="og:title" content="trüfrü Galentine's Day">
     <meta property="og:description" content="Your TrüFrü Crew Brings Out The TrüFrü You">
-    <meta property="og:type" content="website">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* ============================================
-           TrüFrü Galentine's Day - Refined Design
-           Blue Hero + Pink/Ivory/Red Sections
-           Playful, feminine, filled with wonder
-           ============================================ */
         :root {
-            /* Brand Colors */
             --tf-blue: #67A2B9;
-            --tf-blue-dark: #5691a8;
             --tf-light-blue: #D1EBEC;
             --tf-pink: #E68699;
-            --tf-pink-dark: #d4758a;
             --tf-light-pink: #FEE6E9;
             --tf-ivory: #F1E4B2;
             --tf-light-ivory: #FEF8E2;
             --tf-red: #F4364C;
-
-            /* Neutrals */
             --white: #FFFFFF;
             --text-dark: #28507B;
             --text-warm: #4A2D35;
-
-            /* Spacing */
-            --section-padding: 100px;
-            --section-padding-mobile: 60px;
         }
 
-        /* Reset */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
@@ -64,82 +37,16 @@
             background: var(--white);
             overflow-x: hidden;
         }
-
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
-        /* Fancy Script Font */
-        .script-font {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-
         /* ============================================
-           DECORATIVE ELEMENTS - Scalloped Borders
-           ============================================ */
-        .scallop-border-top {
-            position: relative;
-        }
-        .scallop-border-top::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: radial-gradient(circle at 10px -5px, transparent 12px, var(--tf-light-pink) 13px);
-            background-size: 20px 20px;
-        }
-
-        .scallop-border-bottom {
-            position: relative;
-        }
-        .scallop-border-bottom::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 20px;
-            background: radial-gradient(circle at 10px 25px, transparent 12px, var(--tf-light-pink) 13px);
-            background-size: 20px 20px;
-        }
-
-        /* Wavy divider */
-        .wavy-divider {
-            width: 100%;
-            height: 40px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0,20 Q150,0 300,20 T600,20 T900,20 T1200,20 L1200,40 L0,40 Z' fill='%23FEE6E9'/%3E%3C/svg%3E") repeat-x;
-            background-size: 600px 40px;
-        }
-
-        /* Ribbon bow decoration */
-        .ribbon-bow {
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-            position: relative;
-        }
-        .ribbon-bow::before,
-        .ribbon-bow::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            border: 3px solid var(--tf-red);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            top: 0;
-        }
-        .ribbon-bow::before { left: 5px; transform: rotate(-30deg); }
-        .ribbon-bow::after { right: 5px; transform: rotate(30deg); }
-
-        /* ============================================
-           TOP BAR - Blue
+           TOP BAR
            ============================================ */
         .top-bar {
             background: var(--tf-blue);
             color: var(--white);
-            padding: 14px 24px;
+            padding: 12px 24px;
             text-align: center;
             font-size: 15px;
             font-weight: 500;
@@ -148,17 +55,8 @@
             z-index: 1000;
         }
 
-        .top-bar .date {
-            font-weight: 600;
-        }
-
-        .top-bar .tagline {
-            opacity: 0.9;
-            margin-left: 8px;
-        }
-
         /* ============================================
-           HERO SECTION - Blue Theme
+           HERO - Full visual impact
            ============================================ */
         .hero {
             min-height: 100vh;
@@ -168,64 +66,64 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 80px 24px;
+            padding: 60px 24px;
             position: relative;
             overflow: hidden;
         }
 
-        /* Floating fruits */
-        .hero-fruit {
+        /* Decorative elements */
+        .hero-decor {
             position: absolute;
-            opacity: 0.8;
-            animation: floatFruit 8s ease-in-out infinite;
             pointer-events: none;
+            z-index: 0;
         }
-        .hero-fruit.f1 { width: 120px; top: 10%; left: 5%; animation-delay: 0s; }
-        .hero-fruit.f2 { width: 100px; top: 15%; right: 8%; animation-delay: 2s; }
-        .hero-fruit.f3 { width: 80px; bottom: 20%; left: 10%; animation-delay: 4s; }
-        .hero-fruit.f4 { width: 90px; bottom: 25%; right: 5%; animation-delay: 1s; }
+        .hero-decor.fruit-1 { width: 150px; top: 8%; left: 3%; animation: float 6s ease-in-out infinite; }
+        .hero-decor.fruit-2 { width: 120px; top: 12%; right: 5%; animation: float 7s ease-in-out infinite 1s; }
+        .hero-decor.fruit-3 { width: 100px; bottom: 15%; left: 5%; animation: float 8s ease-in-out infinite 2s; }
+        .hero-decor.fruit-4 { width: 130px; bottom: 20%; right: 3%; animation: float 6s ease-in-out infinite 0.5s; }
+        .hero-decor.lines { width: 200px; top: 30%; right: 10%; opacity: 0.3; }
+        .hero-decor.element-1 { width: 80px; top: 5%; left: 15%; opacity: 0.5; }
+        .hero-decor.element-2 { width: 60px; bottom: 10%; right: 15%; opacity: 0.5; }
 
-        @keyframes floatFruit {
-            0%, 100% { transform: translateY(0) rotate(-5deg); }
-            50% { transform: translateY(-25px) rotate(5deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 700px;
         }
 
         .hero-logo {
-            width: 180px;
-            margin: 0 auto 32px;
+            width: 200px;
+            margin: 0 auto 24px;
         }
 
         .hero-title {
-            font-size: clamp(42px, 10vw, 80px);
+            font-size: clamp(48px, 12vw, 100px);
             font-weight: 700;
             color: var(--white);
             margin-bottom: 16px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            letter-spacing: 0.08em;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.15);
         }
 
-        .hero-subtitle {
-            font-size: clamp(20px, 3vw, 28px);
+        .hero-tagline {
+            font-size: clamp(18px, 3vw, 26px);
             color: var(--tf-ivory);
-            font-weight: 400;
-            margin-bottom: 12px;
             font-family: 'Playfair Display', serif;
             font-style: italic;
+            margin-bottom: 8px;
         }
 
         .hero-date {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--white);
             opacity: 0.9;
             margin-bottom: 40px;
-            font-weight: 500;
         }
 
         .hero-cta {
@@ -237,92 +135,138 @@
             font-size: 18px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         .hero-cta:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        @media (max-width: 768px) {
-            .hero-fruit { display: none; }
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
         }
 
         /* ============================================
-           VENUE SECTION - Light Pink
+           PHOTO STRIP
+           ============================================ */
+        .photo-strip {
+            background: var(--tf-light-pink);
+            padding: 40px 0;
+            overflow: hidden;
+        }
+
+        .photo-strip-inner {
+            display: flex;
+            gap: 20px;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .photo-strip-inner img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============================================
+           VENUE SECTION
            ============================================ */
         .venue {
-            background: var(--tf-light-pink);
+            background: var(--white);
             padding: 80px 24px;
-            text-align: center;
             position: relative;
         }
 
-        .venue-content {
-            max-width: 900px;
+        .venue-inner {
+            max-width: 1100px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .venue h2 {
-            font-size: clamp(28px, 5vw, 42px);
+        .venue-image {
+            position: relative;
+        }
+
+        .venue-image img {
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .venue-image .decor-fruit {
+            position: absolute;
+            width: 100px;
+            top: -30px;
+            right: -30px;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .venue-text h2 {
+            font-size: clamp(32px, 5vw, 48px);
             color: var(--tf-red);
             margin-bottom: 8px;
-            font-weight: 600;
         }
 
-        .venue-address {
+        .venue-text .address {
             font-size: 20px;
             color: var(--text-warm);
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
 
         .venue-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-            max-width: 800px;
-            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .venue-feature {
-            background: var(--white);
-            padding: 24px 16px;
-            border-radius: 20px;
-            border: 2px dashed var(--tf-pink);
-            transition: transform 0.3s ease;
-        }
-
-        .venue-feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .venue-feature-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .venue-feature p {
-            font-size: 15px;
-            color: var(--text-warm);
+        .venue-tag {
+            background: var(--tf-light-pink);
+            color: var(--tf-red);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: 500;
         }
 
+        @media (max-width: 768px) {
+            .venue-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         /* ============================================
-           WHAT'S ON SECTION - Ivory
+           WHAT'S ON SECTION
            ============================================ */
         .whats-on {
             background: var(--tf-light-ivory);
-            padding: var(--section-padding) 24px;
+            padding: 80px 24px;
+            position: relative;
         }
 
+        .whats-on-decor {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        .whats-on-decor.left { width: 150px; left: 5%; top: 20%; }
+        .whats-on-decor.right { width: 120px; right: 5%; bottom: 20%; }
+
         .whats-on-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .whats-on h2 {
-            font-size: clamp(28px, 5vw, 42px);
+            font-size: clamp(32px, 5vw, 48px);
             color: var(--tf-red);
             text-align: center;
             margin-bottom: 48px;
@@ -330,136 +274,145 @@
 
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
 
         .activity-card {
             background: var(--white);
-            padding: 28px 24px;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px dashed var(--tf-pink);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
 
         .activity-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+        }
+
+        .activity-card-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .activity-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .activity-card-content {
+            padding: 24px;
+            text-align: center;
         }
 
         .activity-card h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--tf-red);
             margin-bottom: 8px;
-            font-weight: 600;
         }
 
         .activity-card p {
             font-size: 15px;
             color: var(--text-warm);
-            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* ============================================
-           FEATURES SECTION - White with Pink accents
+           PRODUCT SHOWCASE
            ============================================ */
-        .features {
-            background: var(--white);
-            padding: var(--section-padding) 24px;
+        .products {
+            background: var(--tf-light-pink);
+            padding: 80px 24px;
+            text-align: center;
         }
 
-        .features h2 {
+        .products h2 {
             font-size: clamp(28px, 5vw, 42px);
-            color: var(--tf-blue);
-            text-align: center;
+            color: var(--tf-red);
             margin-bottom: 16px;
         }
 
-        .features-subtitle {
-            text-align: center;
-            color: var(--text-warm);
-            margin-bottom: 48px;
+        .products-tagline {
             font-size: 20px;
+            color: var(--text-warm);
             font-family: 'Playfair Display', serif;
             font-style: italic;
+            margin-bottom: 48px;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        .product-grid {
+            display: flex;
+            justify-content: center;
             gap: 32px;
-            max-width: 1000px;
+            flex-wrap: wrap;
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .feature-card {
-            text-align: center;
-            padding: 32px 24px;
-            background: var(--tf-light-pink);
-            border-radius: 24px;
-            position: relative;
+        .product-item {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            background: var(--white);
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 30px;
-            background: var(--tf-red);
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-            border-radius: 0 0 10px 10px;
+        .product-item:hover {
+            transform: scale(1.08);
         }
 
-        .feature-card h3 {
-            font-size: 18px;
-            color: var(--tf-red);
-            margin-top: 16px;
-            margin-bottom: 8px;
-        }
-
-        .feature-card p {
-            font-size: 15px;
-            color: var(--text-warm);
-            line-height: 1.5;
+        .product-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ============================================
-           GALLERY - Pink background
+           GALLERY SECTION
            ============================================ */
         .gallery {
-            background: var(--tf-light-pink);
-            padding: var(--section-padding) 24px;
+            background: var(--white);
+            padding: 80px 24px;
         }
 
         .gallery h2 {
             font-size: clamp(28px, 5vw, 42px);
-            color: var(--tf-red);
+            color: var(--tf-blue);
             text-align: center;
             margin-bottom: 48px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .gallery-item {
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            aspect-ratio: 4/3;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            aspect-ratio: 1;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+            aspect-ratio: auto;
         }
 
         .gallery-item img {
@@ -468,26 +421,34 @@
             object-fit: cover;
         }
 
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-item.tall {
+                grid-row: span 1;
+                aspect-ratio: 1;
+            }
+        }
+
         /* ============================================
-           CTA SECTION - Red/Pink gradient
+           CTA SECTION
            ============================================ */
         .cta-section {
             background: linear-gradient(135deg, var(--tf-pink) 0%, var(--tf-red) 100%);
             padding: 100px 24px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .cta-section::before {
-            content: '';
+        .cta-decor {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 10 L35 25 L30 20 L25 25 Z' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E");
             pointer-events: none;
+            opacity: 0.2;
         }
+        .cta-decor.left { width: 200px; left: -50px; top: 50%; transform: translateY(-50%); }
+        .cta-decor.right { width: 200px; right: -50px; top: 50%; transform: translateY(-50%); }
 
         .cta-content {
             position: relative;
@@ -497,10 +458,9 @@
         }
 
         .cta-section h2 {
-            font-size: clamp(32px, 6vw, 52px);
+            font-size: clamp(36px, 7vw, 56px);
             color: var(--white);
             margin-bottom: 16px;
-            font-weight: 600;
         }
 
         .cta-section p {
@@ -519,12 +479,11 @@
             font-size: 18px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+            transform: translateY(-4px) scale(1.03);
         }
 
         /* ============================================
@@ -538,7 +497,7 @@
         }
 
         .footer-logo {
-            width: 100px;
+            width: 120px;
             margin: 0 auto 20px;
         }
 
@@ -548,183 +507,187 @@
             margin-bottom: 8px;
         }
 
-        /* ============================================
-           ANIMATIONS
-           ============================================ */
+        /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* ============================================
-           RESPONSIVE
-           ============================================ */
         @media (max-width: 768px) {
-            .top-bar {
-                font-size: 13px;
-                padding: 12px 16px;
-            }
-
-            .top-bar .tagline {
-                display: block;
-                margin-left: 0;
-                margin-top: 4px;
-            }
-
-            .hero {
-                padding: 60px 20px;
-                min-height: 90vh;
-            }
-
-            .activity-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .venue-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-decor { display: none; }
+            .whats-on-decor { display: none; }
+            .cta-decor { display: none; }
         }
     </style>
 </head>
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <span class="date">8 February 2026</span>
-        <span class="tagline">trüfrü Galentine's Day</span>
+        8 February 2026 | trüfrü Galentine's Day
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <!-- Floating Fruits -->
-        <img src="Branded assets/Strawberry_1.png" alt="" class="hero-fruit f1">
-        <img src="Branded assets/Raspberry_1.png" alt="" class="hero-fruit f2">
-        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="hero-fruit f3">
-        <img src="Branded assets/Pineapple_1.png" alt="" class="hero-fruit f4">
+        <!-- Decorative Elements -->
+        <img src="Branded assets/Strawberry_1.png" alt="" class="hero-decor fruit-1">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="hero-decor fruit-2">
+        <img src="Branded assets/HC_StrawMilk_BackClump.png" alt="" class="hero-decor fruit-3">
+        <img src="Branded assets/HC_DC_Raspberry_Back_Clump (1).png" alt="" class="hero-decor fruit-4">
+        <img src="Lines_Arrows.png" alt="" class="hero-decor lines">
+        <img src="Element 1.png" alt="" class="hero-decor element-1">
+        <img src="Element 2.png" alt="" class="hero-decor element-2">
 
         <div class="hero-content">
             <img src="Others/Trü Frü Logo_Ivory_long.png" alt="trü frü" class="hero-logo">
-
             <h1 class="hero-title">Galentine's</h1>
-            <p class="hero-subtitle">Your TrüFrü Crew Brings Out The TrüFrü You</p>
+            <p class="hero-tagline">Your TrüFrü Crew Brings Out The TrüFrü You</p>
             <p class="hero-date">Hen's Teeth, Blackpitts, Dublin 8</p>
-
             <a href="#register" class="hero-cta">Count Me In</a>
         </div>
     </section>
 
-    <!-- Venue Section -->
-    <section class="venue fade-in">
-        <div class="venue-content">
-            <h2>Hen's Teeth</h2>
-            <p class="venue-address">Blackpitts, Dublin 8</p>
+    <!-- Photo Strip -->
+    <div class="photo-strip">
+        <div class="photo-strip-inner">
+            <img src="Branded assets/269A8233.jpg" alt="">
+            <img src="Branded assets/269A8317.jpg" alt="">
+            <img src="Branded assets/269A8325.jpg" alt="">
+            <img src="Branded assets/269A8367 (1).jpg" alt="">
+            <img src="Branded assets/269A8491.jpg" alt="">
+            <img src="Branded assets/269A8758.jpg" alt="">
+            <!-- Duplicate for seamless loop -->
+            <img src="Branded assets/269A8233.jpg" alt="">
+            <img src="Branded assets/269A8317.jpg" alt="">
+            <img src="Branded assets/269A8325.jpg" alt="">
+            <img src="Branded assets/269A8367 (1).jpg" alt="">
+            <img src="Branded assets/269A8491.jpg" alt="">
+            <img src="Branded assets/269A8758.jpg" alt="">
+        </div>
+    </div>
 
-            <div class="venue-features">
-                <div class="venue-feature">
-                    <div class="venue-feature-icon">🍸</div>
-                    <p>Food & Cocktails</p>
-                </div>
-                <div class="venue-feature">
-                    <div class="venue-feature-icon">💎</div>
-                    <p>Creative Workshops</p>
-                </div>
-                <div class="venue-feature">
-                    <div class="venue-feature-icon">🎬</div>
-                    <p>Cinema Screening</p>
-                </div>
-                <div class="venue-feature">
-                    <div class="venue-feature-icon">🎉</div>
-                    <p>Afterparty</p>
+    <!-- Venue -->
+    <section class="venue fade-in">
+        <div class="venue-inner">
+            <div class="venue-image">
+                <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="trüfrü at Hen's Teeth">
+                <img src="Branded assets/Strawberry_1.png" alt="" class="decor-fruit">
+            </div>
+            <div class="venue-text">
+                <h2>Hen's Teeth</h2>
+                <p class="address">Blackpitts, Dublin 8</p>
+                <div class="venue-features">
+                    <span class="venue-tag">Food & Cocktails</span>
+                    <span class="venue-tag">Creative Workshops</span>
+                    <span class="venue-tag">Cinema Screening</span>
+                    <span class="venue-tag">Afterparty</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What's On Section -->
+    <!-- What's On -->
     <section class="whats-on fade-in">
+        <img src="Icons_Fruits_Zeichenfläche 1 Kopie.png" alt="" class="whats-on-decor left">
+        <img src="Icons_Fruits_Zeichenfläche 1 Kopie 2.png" alt="" class="whats-on-decor right">
+
         <div class="whats-on-content">
             <h2>What's On</h2>
-
             <div class="activity-grid">
                 <div class="activity-card">
-                    <h3>Doors & Welcome</h3>
-                    <p>Arrive, settle in, and meet your crew</p>
+                    <div class="activity-card-image">
+                        <img src="Branded assets/269A8233.jpg" alt="">
+                    </div>
+                    <div class="activity-card-content">
+                        <h3>Doors & Welcome</h3>
+                        <p>Arrive, settle in, and meet your crew</p>
+                    </div>
                 </div>
 
                 <div class="activity-card">
-                    <h3>Diamonds & trüfrü Are A Girl's Best Friend</h3>
-                    <p>Make your own phone charm workshop</p>
+                    <div class="activity-card-image">
+                        <img src="Branded assets/269A8367 (1).jpg" alt="">
+                    </div>
+                    <div class="activity-card-content">
+                        <h3>Diamonds & trüfrü Are A Girl's Best Friend</h3>
+                        <p>Make your own phone charm workshop</p>
+                    </div>
                 </div>
 
                 <div class="activity-card">
-                    <h3>"Pour Your Trü Love"</h3>
-                    <p>Mixology Masterclass</p>
+                    <div class="activity-card-image">
+                        <img src="Branded assets/269A8491.jpg" alt="">
+                    </div>
+                    <div class="activity-card-content">
+                        <h3>"Pour Your Trü Love"</h3>
+                        <p>Mixology Masterclass</p>
+                    </div>
                 </div>
 
                 <div class="activity-card">
-                    <h3>The Sweet Finale</h3>
-                    <p>Indulge in all things trüfrü</p>
+                    <div class="activity-card-image">
+                        <img src="Branded assets/269A8758.jpg" alt="">
+                    </div>
+                    <div class="activity-card-content">
+                        <h3>The Sweet Finale</h3>
+                        <p>Indulge in all things trüfrü</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features fade-in">
-        <h2>What Makes It Special</h2>
-        <p class="features-subtitle">Better together, always</p>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3>Surprise & Delight</h3>
-                <p>Unexpected moments of joy at every turn</p>
+    <!-- Products -->
+    <section class="products fade-in">
+        <h2>Real Fruit. Real Chocolate.</h2>
+        <p class="products-tagline">Decadence you can feel good about</p>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="Branded assets/TRUFRU_STRAWBERRY_0123_1x1 (1).jpg" alt="Strawberry">
             </div>
-            <div class="feature-card">
-                <h3>Build Community</h3>
-                <p>Connect with your crew and make new friends</p>
+            <div class="product-item">
+                <img src="Branded assets/Chocolate_1.jpg" alt="Chocolate">
             </div>
-            <div class="feature-card">
-                <h3>Find The Goodness</h3>
-                <p>Discover the magic in simple pleasures</p>
+            <div class="product-item">
+                <img src="Branded assets/Chocolate_4.jpg" alt="Chocolate">
             </div>
-            <div class="feature-card">
-                <h3>Culturally Tuned-In</h3>
-                <p>Experiences that feel fresh and relevant</p>
+            <div class="product-item">
+                <img src="Branded assets/Lifestyle image OPTION 2.png" alt="Lifestyle">
             </div>
         </div>
     </section>
 
     <!-- Gallery -->
     <section class="gallery fade-in">
-        <h2>A Taste of What's Coming</h2>
+        <h2>Moments That Matter</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="Branded assets/269A8233.jpg" alt="TrüFrü Experience">
+            <div class="gallery-item tall">
+                <img src="Branded assets/269A7869 (2) (2).jpg" alt="">
             </div>
             <div class="gallery-item">
-                <img src="Branded assets/269A8317.jpg" alt="TrüFrü Moments">
+                <img src="Branded assets/269A8338 (2) (2).jpg" alt="">
             </div>
             <div class="gallery-item">
-                <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="TrüFrü Products">
+                <img src="Branded assets/269A8325.jpg" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="Branded assets/Coconut_2.png" alt="">
+            </div>
+            <div class="gallery-item">
+                <img src="Branded assets/Pineapple_1.png" alt="">
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section fade-in" id="register">
+        <img src="Branded assets/Strawberry_1.png" alt="" class="cta-decor left">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="cta-decor right">
+
         <div class="cta-content">
             <h2>Ready To Celebrate?</h2>
             <p>8 February 2026 | Hen's Teeth, Dublin</p>
@@ -739,11 +702,9 @@
         <p>Created by Headcase</p>
     </footer>
 
-    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
-
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -752,7 +713,6 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             fadeElements.forEach(el => observer.observe(el));
         });
 
@@ -760,9 +720,7 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
