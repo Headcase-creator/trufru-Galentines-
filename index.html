@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>trüfrü Galentine's Day | Dublin</title>
+    <title>trüfrü Galentine's | Dublin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -50,12 +50,35 @@
             pointer-events: none;
             z-index: 1;
         }
-        .float-decor.f1 { width: 180px; top: 5%; left: -2%; animation: bobble 8s ease-in-out infinite; }
-        .float-decor.f2 { width: 140px; top: 10%; right: 2%; animation: bobble 7s ease-in-out infinite 1s; }
-        .float-decor.f3 { width: 120px; bottom: 25%; left: 3%; animation: bobble 9s ease-in-out infinite 2s; }
-        .float-decor.f4 { width: 160px; bottom: 15%; right: -2%; animation: bobble 6s ease-in-out infinite 0.5s; }
-        .float-decor.f5 { width: 100px; top: 35%; left: 8%; animation: bobble 10s ease-in-out infinite 3s; opacity: 0.7; }
-        .float-decor.f6 { width: 90px; top: 40%; right: 10%; animation: bobble 8s ease-in-out infinite 1.5s; opacity: 0.6; }
+        .float-decor.f1 { width: 130px; top: 5%; left: 5%; animation: bobble 8s ease-in-out infinite; }
+        .float-decor.f2 { width: 100px; top: 8%; right: 8%; animation: bobble 7s ease-in-out infinite 1s; }
+        .float-decor.f3 { width: 90px; bottom: 30%; left: 8%; animation: bobble 9s ease-in-out infinite 2s; }
+        .float-decor.f4 { width: 110px; bottom: 20%; right: 5%; animation: bobble 6s ease-in-out infinite 0.5s; }
+        .float-decor.f5 { width: 80px; top: 25%; left: 3%; animation: bobble 10s ease-in-out infinite 3s; }
+        .float-decor.f6 { width: 70px; top: 55%; right: 3%; animation: bobble 8s ease-in-out infinite 1.5s; }
+        .float-decor.f7 { width: 95px; bottom: 45%; left: 12%; animation: bobble 7s ease-in-out infinite 2.5s; }
+        .float-decor.f8 { width: 85px; top: 40%; right: 12%; animation: bobble 9s ease-in-out infinite 0.8s; }
+        .float-decor.f9 { width: 75px; bottom: 12%; left: 15%; animation: bobble 6s ease-in-out infinite 1.2s; }
+        .float-decor.f10 { width: 65px; top: 70%; right: 15%; animation: bobble 8s ease-in-out infinite 3.5s; }
+
+        /* Floating emoji decorations */
+        .emoji-float {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            font-size: 40px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+        }
+        .emoji-float.kiss1 { top: 12%; left: 18%; font-size: 35px; animation: bobble 7s ease-in-out infinite 0.3s; }
+        .emoji-float.kiss2 { top: 65%; right: 20%; font-size: 28px; animation: bobble 8s ease-in-out infinite 1.8s; }
+        .emoji-float.kiss3 { bottom: 35%; left: 20%; font-size: 32px; animation: bobble 6s ease-in-out infinite 2.8s; }
+        .emoji-float.kiss4 { top: 35%; right: 22%; font-size: 26px; animation: bobble 9s ease-in-out infinite 0.6s; }
+        .emoji-float.rose1 { top: 18%; right: 18%; font-size: 38px; animation: bobble 8s ease-in-out infinite 1.3s; }
+        .emoji-float.rose2 { bottom: 25%; right: 25%; font-size: 30px; animation: bobble 7s ease-in-out infinite 2.2s; }
+        .emoji-float.rose3 { top: 48%; left: 22%; font-size: 34px; animation: bobble 9s ease-in-out infinite 0.9s; }
+        .emoji-float.rose4 { bottom: 50%; left: 5%; font-size: 28px; animation: bobble 6s ease-in-out infinite 3.2s; }
+        .emoji-float.heart1 { top: 30%; left: 28%; font-size: 24px; animation: bobble 7s ease-in-out infinite 1.5s; }
+        .emoji-float.heart2 { bottom: 18%; right: 30%; font-size: 22px; animation: bobble 8s ease-in-out infinite 2.5s; }
 
         @keyframes bobble {
             0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
@@ -99,11 +122,6 @@
             text-shadow: 0 6px 40px rgba(0,0,0,0.2);
         }
 
-        .hero-title span {
-            display: block;
-            font-style: italic;
-            font-weight: 500;
-        }
 
         .hero-sub {
             font-size: clamp(18px, 3vw, 24px);
@@ -469,18 +487,38 @@
 <body>
     <!-- Hero -->
     <section class="hero">
-        <!-- Floating decorations -->
+        <!-- Floating berries -->
         <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f1">
         <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f2">
-        <img src="Branded assets/HC_StrawMilk_BackClump.png" alt="" class="float-decor f3">
-        <img src="Branded assets/HC_DC_Raspberry_Back_Clump (1).png" alt="" class="float-decor f4">
-        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="float-decor f5">
-        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-decor f6">
+        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="float-decor f3">
+        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-decor f4">
+        <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f5">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f6">
+        <img src="Branded assets/Strawberry_2 (2).png" alt="" class="float-decor f7">
+        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="float-decor f8">
+        <img src="Branded assets/Strawberry_1.png" alt="" class="float-decor f9">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="float-decor f10">
+
+        <!-- Kisses -->
+        <span class="emoji-float kiss1">💋</span>
+        <span class="emoji-float kiss2">💋</span>
+        <span class="emoji-float kiss3">💋</span>
+        <span class="emoji-float kiss4">💋</span>
+
+        <!-- Roses -->
+        <span class="emoji-float rose1">🌹</span>
+        <span class="emoji-float rose2">🌹</span>
+        <span class="emoji-float rose3">🌹</span>
+        <span class="emoji-float rose4">🌹</span>
+
+        <!-- Hearts -->
+        <span class="emoji-float heart1">💕</span>
+        <span class="emoji-float heart2">💕</span>
 
         <div class="hero-content">
             <img src="Branded assets/Trü Frü Logo_Ivory_long.png" alt="trü frü" class="hero-logo">
             <div class="hero-date-badge">8 February 2026</div>
-            <h1 class="hero-title">Galentine's<span>Day</span></h1>
+            <h1 class="hero-title">Galentine's</h1>
             <p class="hero-sub">Hen's Teeth, Blackpitts, Dublin 8</p>
             <a href="#register" class="hero-cta">Grab Your Spot</a>
         </div>
