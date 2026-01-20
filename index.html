@@ -202,84 +202,89 @@
            THE LINEUP
            ============================================ */
         .lineup {
-            background: var(--tf-light-pink);
-            padding: 80px 24px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .lineup-decor {
-            position: absolute;
-            pointer-events: none;
-            opacity: 0.4;
-        }
-        .lineup-decor.left { width: 200px; left: -50px; top: 10%; }
-        .lineup-decor.right { width: 180px; right: -40px; bottom: 10%; }
-
-        .lineup h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(42px, 8vw, 72px);
-            color: var(--tf-red);
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .lineup-venue {
-            font-size: 18px;
-            color: var(--text-warm);
-            margin-bottom: 50px;
-        }
-
-        .lineup-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .lineup-item {
             background: var(--white);
-            padding: 24px 40px;
-            border-radius: 60px;
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text-warm);
-            box-shadow: 0 8px 30px rgba(230, 134, 153, 0.2);
-            transition: all 0.3s ease;
+            padding: 80px 24px;
             position: relative;
             overflow: hidden;
         }
 
-        .lineup-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, var(--tf-pink), var(--tf-red));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .lineup-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .lineup-item span {
+        .lineup-image {
             position: relative;
-            z-index: 1;
         }
 
-        .lineup-item:hover {
-            transform: translateY(-4px) scale(1.02);
+        .lineup-image img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
         }
 
-        .lineup-item:hover::before {
-            opacity: 1;
+        .lineup-image .float-berry {
+            position: absolute;
+            width: 80px;
+            pointer-events: none;
+        }
+        .lineup-image .float-berry.b1 { top: -30px; right: -20px; animation: bobble 6s ease-in-out infinite; }
+        .lineup-image .float-berry.b2 { bottom: -25px; left: -25px; animation: bobble 7s ease-in-out infinite 1s; }
+
+        .lineup-text {
+            text-align: left;
         }
 
-        .lineup-item:hover span {
-            color: var(--white);
+        .lineup-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 64px);
+            color: var(--tf-red);
+            margin-bottom: 12px;
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .lineup-text .lineup-sub {
+            font-size: 18px;
+            color: var(--text-warm);
+            margin-bottom: 36px;
+            opacity: 0.8;
+        }
+
+        .lineup-list {
+            list-style: none;
+        }
+
+        .lineup-list li {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(22px, 4vw, 32px);
+            color: var(--text-warm);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(230, 134, 153, 0.3);
+            font-style: italic;
+            transition: all 0.3s ease;
+        }
+
+        .lineup-list li:last-child {
+            border-bottom: none;
+        }
+
+        .lineup-list li:hover {
+            color: var(--tf-red);
+            padding-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .lineup-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .lineup-text { text-align: center; }
+            .lineup-image { order: -1; }
         }
 
         /* ============================================
@@ -555,18 +560,23 @@
 
     <!-- The Lineup -->
     <section class="lineup reveal">
-        <img src="Branded assets/Strawberry_1.png" alt="" class="lineup-decor left">
-        <img src="Branded assets/Raspberry_1.png" alt="" class="lineup-decor right">
-
-        <h2>The Lineup</h2>
-        <p class="lineup-venue">An afternoon of cocktails, creativity & connection</p>
-
-        <div class="lineup-items">
-            <div class="lineup-item"><span>Cocktails & Bites</span></div>
-            <div class="lineup-item"><span>Phone Charm Workshop</span></div>
-            <div class="lineup-item"><span>Mixology Masterclass</span></div>
-            <div class="lineup-item"><span>Sweet Treats</span></div>
-            <div class="lineup-item"><span>Good Vibes Only</span></div>
+        <div class="lineup-inner">
+            <div class="lineup-image">
+                <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="trüfrü boxes">
+                <img src="Branded assets/Strawberry_1.png" alt="" class="float-berry b1">
+                <img src="Branded assets/Raspberry_1.png" alt="" class="float-berry b2">
+            </div>
+            <div class="lineup-text">
+                <h2>The Lineup</h2>
+                <p class="lineup-sub">An afternoon of cocktails, creativity & connection</p>
+                <ul class="lineup-list">
+                    <li>Cocktails & Bites</li>
+                    <li>Phone Charm Workshop</li>
+                    <li>Mixology Masterclass</li>
+                    <li>Sweet Treats</li>
+                    <li>Good Vibes Only</li>
+                </ul>
+            </div>
         </div>
     </section>
 
