@@ -184,26 +184,38 @@
             margin: 0 auto 48px;
         }
 
-        .hero-title {
+        .hero-eyebrow {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
             color: var(--tf-blue);
             margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            color: var(--tf-blue);
+            margin-bottom: 24px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
 
-        .hero-date {
-            font-size: clamp(18px, 2.5vw, 24px);
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 24px;
-        }
-
-        .hero-tagline {
-            font-size: clamp(22px, 3vw, 32px);
+        .hero-subtitle {
+            font-size: clamp(20px, 3vw, 28px);
             color: var(--text-dark);
             font-weight: 400;
-            margin-bottom: 48px;
-            font-style: italic;
+            margin-bottom: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .hero-date {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 40px;
         }
 
         .hero-cta {
@@ -800,11 +812,12 @@
         <img src="Branded assets/Strawberry_2 (1).png" alt="" class="floating-product product-3">
 
         <div class="hero-content">
+            <p class="hero-eyebrow">You're Invited</p>
             <img src="Others/Trü Frü Logo_Blue_long.png" alt="Trü Frü" class="hero-logo">
 
             <h1 class="headline-xl hero-title">Galentine's</h1>
+            <p class="hero-subtitle">Join us for an afternoon of indulgence, creativity & connection</p>
             <p class="hero-date">Sunday, 8 February 2026 | Dublin</p>
-            <p class="hero-tagline">"Real fruit. Real moments. Real magic."</p>
             <a href="#register" class="hero-cta">I Want In</a>
         </div>
     </section>
