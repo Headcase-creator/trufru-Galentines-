@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your TrüFrü Galentine's Day | Dublin | 12 February 2026</title>
+    <title>trüfrü Galentine's Day | Dublin | 8 February 2026</title>
     <meta name="description" content="Your TrüFrü Crew Brings Out The TrüFrü You. Join us for Galentine's Day at Hen's Teeth, Dublin.">
 
     <!-- Open Graph -->
@@ -309,53 +309,53 @@
         }
 
         /* ============================================
-           SCHEDULE SECTION - Ivory
+           WHAT'S ON SECTION - Ivory
            ============================================ */
-        .schedule {
+        .whats-on {
             background: var(--tf-light-ivory);
             padding: var(--section-padding) 24px;
         }
 
-        .schedule-content {
-            max-width: 700px;
+        .whats-on-content {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .schedule h2 {
+        .whats-on h2 {
             font-size: clamp(28px, 5vw, 42px);
             color: var(--tf-red);
             text-align: center;
             margin-bottom: 48px;
         }
 
-        .schedule-item {
-            display: flex;
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 24px;
-            margin-bottom: 32px;
-            align-items: flex-start;
         }
 
-        .schedule-time {
-            background: var(--tf-pink);
-            color: var(--white);
-            padding: 8px 16px;
+        .activity-card {
+            background: var(--white);
+            padding: 28px 24px;
             border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            min-width: 110px;
             text-align: center;
+            border: 2px dashed var(--tf-pink);
+            transition: transform 0.3s ease;
         }
 
-        .schedule-details h3 {
-            font-size: 20px;
-            color: var(--text-warm);
-            margin-bottom: 4px;
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card h3 {
+            font-size: 18px;
+            color: var(--tf-red);
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
-        .schedule-details p {
-            font-size: 16px;
+        .activity-card p {
+            font-size: 15px;
             color: var(--text-warm);
             opacity: 0.8;
         }
@@ -582,13 +582,8 @@
                 min-height: 90vh;
             }
 
-            .schedule-item {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .schedule-time {
-                align-self: flex-start;
+            .activity-grid {
+                grid-template-columns: 1fr;
             }
 
             .venue-features {
@@ -608,8 +603,8 @@
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
-        <span class="date">Join us on 12 February 2026</span>
-        <span class="tagline">Galentine's Day with your TrüFrü Crew</span>
+        <span class="date">8 February 2026</span>
+        <span class="tagline">trüfrü Galentine's Day</span>
     </div>
 
     <!-- Hero Section -->
@@ -658,40 +653,30 @@
         </div>
     </section>
 
-    <!-- Schedule Section -->
-    <section class="schedule fade-in">
-        <div class="schedule-content">
-            <h2>The Lineup</h2>
+    <!-- What's On Section -->
+    <section class="whats-on fade-in">
+        <div class="whats-on-content">
+            <h2>What's On</h2>
 
-            <div class="schedule-item">
-                <span class="schedule-time">14:00 - 15:00</span>
-                <div class="schedule-details">
+            <div class="activity-grid">
+                <div class="activity-card">
                     <h3>Doors & Welcome</h3>
                     <p>Arrive, settle in, and meet your crew</p>
                 </div>
-            </div>
 
-            <div class="schedule-item">
-                <span class="schedule-time">16:00 - 17:00</span>
-                <div class="schedule-details">
+                <div class="activity-card">
                     <h3>Diamonds & trüfrü Are A Girl's Best Friend</h3>
                     <p>Make your own phone charm workshop</p>
                 </div>
-            </div>
 
-            <div class="schedule-item">
-                <span class="schedule-time">17:00 - 18:00</span>
-                <div class="schedule-details">
+                <div class="activity-card">
                     <h3>"Pour Your Trü Love"</h3>
                     <p>Mixology Masterclass</p>
                 </div>
-            </div>
 
-            <div class="schedule-item">
-                <span class="schedule-time">18:00 - 18:30</span>
-                <div class="schedule-details">
+                <div class="activity-card">
                     <h3>The Sweet Finale</h3>
-                    <p>Indulge in all things TrüFrü</p>
+                    <p>Indulge in all things trüfrü</p>
                 </div>
             </div>
         </div>
@@ -742,7 +727,7 @@
     <section class="cta-section fade-in" id="register">
         <div class="cta-content">
             <h2>Ready To Celebrate?</h2>
-            <p>12 February 2026 | Hen's Teeth, Dublin</p>
+            <p>8 February 2026 | Hen's Teeth, Dublin</p>
             <a href="#" class="cta-button">Register Now</a>
         </div>
     </section>
@@ -750,8 +735,8 @@
     <!-- Footer -->
     <footer class="footer">
         <img src="Others/Trü Frü Logo_White_long.png" alt="trü frü" class="footer-logo">
-        <p>© 2026 TrüFrü</p>
-        <p>Event produced by Headcase Marketing</p>
+        <p>© 2026 trüfrü</p>
+        <p>Created by Headcase</p>
     </footer>
 
     <!-- Scripts -->
