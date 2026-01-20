@@ -42,7 +42,7 @@
         }
 
         /* ============================================
-           HERO - Full pink energy
+           HERO
            ============================================ */
         .hero {
             min-height: 100vh;
@@ -57,7 +57,6 @@
             overflow: hidden;
         }
 
-        /* Floating fruits */
         .float-decor {
             position: absolute;
             pointer-events: none;
@@ -74,7 +73,6 @@
         .float-decor.f9 { width: 75px; bottom: 12%; left: 15%; animation: bobble 6s ease-in-out infinite 1.2s; }
         .float-decor.f10 { width: 65px; top: 70%; right: 15%; animation: bobble 8s ease-in-out infinite 3.5s; }
 
-        /* Floating emoji decorations */
         .emoji-float {
             position: absolute;
             pointer-events: none;
@@ -107,40 +105,41 @@
 
         .hero-logo {
             width: 280px;
-            margin: 0 auto 30px;
+            margin: 0 auto 20px;
             filter: drop-shadow(0 8px 30px rgba(0,0,0,0.15));
         }
 
-        .hero-date-badge {
-            display: inline-block;
-            background: var(--white);
-            color: var(--tf-red);
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        .hero-invite {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--white);
+            font-style: italic;
+            margin-bottom: 12px;
+            opacity: 0.95;
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(60px, 15vw, 140px);
+            font-size: clamp(70px, 18vw, 160px);
             font-weight: 700;
             color: var(--white);
-            line-height: 0.9;
-            margin-bottom: 20px;
+            line-height: 0.85;
+            margin-bottom: 16px;
             text-shadow: 0 6px 40px rgba(0,0,0,0.2);
         }
 
-
-        .hero-sub {
-            font-size: clamp(18px, 3vw, 24px);
+        .hero-details {
+            font-size: 18px;
             color: var(--white);
-            opacity: 0.95;
-            margin-bottom: 40px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .hero-venue {
+            font-size: 16px;
+            color: var(--tf-ivory);
+            margin-bottom: 36px;
             font-weight: 300;
         }
 
@@ -164,45 +163,58 @@
         }
 
         /* ============================================
-           PHOTO COLLAGE - More organic
+           PHOTO MOMENT
            ============================================ */
-        .photo-section {
+        .photos {
             background: var(--white);
-            padding: 0;
-            position: relative;
+            padding: 50px 24px;
+            text-align: center;
         }
 
-        .photo-strip {
+        .photos-intro {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            color: var(--tf-red);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .photo-grid {
             display: flex;
             gap: 16px;
-            padding: 40px 16px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .photo-strip::-webkit-scrollbar { display: none; }
-
-        .photo-strip img {
-            flex: 0 0 auto;
-            width: 280px;
-            height: 350px;
+        .photo-grid img {
+            width: 220px;
+            height: 280px;
             object-fit: cover;
-            border-radius: 20px;
-            scroll-snap-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
             transition: transform 0.3s ease;
         }
 
-        .photo-strip img:hover {
-            transform: scale(1.03) rotate(-1deg);
+        .photo-grid img:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .photo-grid img:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05) rotate(0deg);
+            z-index: 2;
         }
 
         /* ============================================
            THE LINEUP
            ============================================ */
         .lineup {
-            background: var(--white);
+            background: var(--tf-light-pink);
             padding: 80px 24px;
             position: relative;
             overflow: hidden;
@@ -221,7 +233,7 @@
             position: relative;
         }
 
-        .lineup-image img {
+        .lineup-image > img:first-child {
             width: 100%;
             border-radius: 24px;
             box-shadow: 0 25px 80px rgba(0,0,0,0.15);
@@ -234,10 +246,6 @@
         }
         .lineup-image .float-berry.b1 { top: -30px; right: -20px; animation: bobble 6s ease-in-out infinite; }
         .lineup-image .float-berry.b2 { bottom: -25px; left: -25px; animation: bobble 7s ease-in-out infinite 1s; }
-
-        .lineup-text {
-            text-align: left;
-        }
 
         .lineup-text h2 {
             font-family: 'Playfair Display', serif;
@@ -284,132 +292,11 @@
                 gap: 40px;
             }
             .lineup-text { text-align: center; }
-            .lineup-image { order: -1; }
+            .lineup-image { order: -1; max-width: 400px; margin: 0 auto; }
         }
 
         /* ============================================
-           FEATURED SECTION - Products + Vibes
-           ============================================ */
-        .featured {
-            background: linear-gradient(180deg, var(--white) 0%, var(--tf-light-ivory) 100%);
-            padding: 80px 24px;
-            position: relative;
-        }
-
-        .featured-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .featured-text {
-            text-align: left;
-        }
-
-        .featured-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(36px, 6vw, 56px);
-            color: var(--tf-red);
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .featured-text p {
-            font-size: 18px;
-            color: var(--text-warm);
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .featured-products {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .product-circle {
-            aspect-ratio: 1;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-            transition: transform 0.4s ease;
-        }
-
-        .product-circle:nth-child(2) { transform: translateY(30px); }
-        .product-circle:nth-child(3) { transform: translateY(-20px); }
-
-        .product-circle:hover {
-            transform: scale(1.08) rotate(3deg);
-        }
-        .product-circle:nth-child(2):hover { transform: translateY(30px) scale(1.08) rotate(-3deg); }
-        .product-circle:nth-child(3):hover { transform: translateY(-20px) scale(1.08) rotate(3deg); }
-
-        .product-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 768px) {
-            .featured-inner {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .featured-text { text-align: center; }
-            .product-circle:nth-child(2),
-            .product-circle:nth-child(3) { transform: none; }
-        }
-
-        /* ============================================
-           GALLERY MOSAIC
-           ============================================ */
-        .gallery {
-            background: var(--tf-light-pink);
-            padding: 60px 24px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-        .gallery-item:nth-child(4) { grid-column: span 2; }
-
-        .gallery-item:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-            .gallery-item:nth-child(4) { grid-column: span 1; }
-        }
-
-        /* ============================================
-           CTA - Final push
+           CTA
            ============================================ */
         .cta-final {
             background: linear-gradient(135deg, var(--tf-pink) 0%, var(--tf-red) 100%);
@@ -482,15 +369,16 @@
             margin-bottom: 6px;
         }
 
-        /* Mobile adjustments */
+        /* Mobile */
         @media (max-width: 768px) {
             .float-decor { opacity: 0.5; }
-            .float-decor.f5, .float-decor.f6 { display: none; }
+            .float-decor.f5, .float-decor.f6, .float-decor.f7, .float-decor.f8 { display: none; }
+            .emoji-float { font-size: 24px !important; }
             .hero-logo { width: 200px; }
-            .lineup-item { padding: 18px 28px; font-size: 16px; }
+            .photo-grid img { width: 160px; height: 200px; }
         }
 
-        /* Smooth animations on scroll */
+        /* Reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -540,21 +428,22 @@
 
         <div class="hero-content">
             <img src="Branded assets/Trü Frü Logo_Ivory_long.png" alt="trü frü" class="hero-logo">
-            <div class="hero-date-badge">8 February 2026</div>
+            <p class="hero-invite">You're invited to</p>
             <h1 class="hero-title">Galentine's</h1>
-            <p class="hero-sub">Hen's Teeth, Blackpitts, Dublin 8</p>
+            <p class="hero-details">Saturday, 8 February 2026</p>
+            <p class="hero-venue">Hen's Teeth · Blackpitts, Dublin 8</p>
             <a href="#register" class="hero-cta">Grab Your Spot</a>
         </div>
     </section>
 
-    <!-- Photo Strip -->
-    <section class="photo-section">
-        <div class="photo-strip">
+    <!-- Photos -->
+    <section class="photos reveal">
+        <p class="photos-intro">A taste of what's to come...</p>
+        <div class="photo-grid">
             <img src="Branded assets/269A8338 (2) (2).jpg" alt="">
             <img src="Branded assets/269A8367 (1).jpg" alt="">
             <img src="Branded assets/269A7869 (2) (2).jpg" alt="">
             <img src="Branded assets/269A8317.jpg" alt="">
-            <img src="Branded assets/269A8758.jpg" alt="">
         </div>
     </section>
 
@@ -568,7 +457,7 @@
             </div>
             <div class="lineup-text">
                 <h2>The Lineup</h2>
-                <p class="lineup-sub">An afternoon of cocktails, creativity & connection</p>
+                <p class="lineup-sub">An afternoon of cocktails, creativity & connection (and trüfrü)</p>
                 <ul class="lineup-list">
                     <li>Cocktails & Bites</li>
                     <li>Phone Charm Workshop</li>
@@ -580,58 +469,13 @@
         </div>
     </section>
 
-    <!-- Featured / Products -->
-    <section class="featured reveal">
-        <div class="featured-inner">
-            <div class="featured-text">
-                <h2>Real Fruit.<br>Real Chocolate.<br>Real Good.</h2>
-                <p>Frozen berries dipped in premium chocolate. It's the treat you didn't know you needed — until now.</p>
-            </div>
-            <div class="featured-products">
-                <div class="product-circle">
-                    <img src="Branded assets/TRUFRU_STRAWBERRY_0123_1x1 (1).jpg" alt="">
-                </div>
-                <div class="product-circle">
-                    <img src="Branded assets/Chocolate_1.jpg" alt="">
-                </div>
-                <div class="product-circle">
-                    <img src="Branded assets/Chocolate_4.jpg" alt="">
-                </div>
-                <div class="product-circle">
-                    <img src="Branded assets/Lifestyle image OPTION 2.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery reveal">
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="Branded assets/269A8233.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="Branded assets/Coconut_2.png" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="Branded assets/Pineapple_1.png" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="Branded assets/269A8325.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="Branded assets/STACKED BOXES (HOLDING).jpg" alt="">
-            </div>
-        </div>
-    </section>
-
     <!-- CTA -->
     <section class="cta-final" id="register">
         <img src="Branded assets/HC_StrawMilk_BackClump.png" alt="" class="cta-decor c1">
         <img src="Branded assets/HC_DC_Raspberry_Back_Clump (1).png" alt="" class="cta-decor c2">
 
         <h2>See You There?</h2>
-        <p>8 February 2026 • Hen's Teeth, Dublin</p>
+        <p>It's free — but spots are limited</p>
         <a href="#" class="cta-btn">Get Your Free Ticket</a>
     </section>
 
@@ -643,18 +487,14 @@
     </footer>
 
     <script>
-        // Reveal on scroll
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.15 });
         reveals.forEach(el => observer.observe(el));
 
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 e.preventDefault();
