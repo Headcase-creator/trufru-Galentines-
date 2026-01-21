@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trü Frü | Create · Taste · Connect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --tf-blue: #67A2B9;
+            --tf-ivory: #F1E4B2;
+            --tf-pink: #E68699;
+            --tf-light-pink: #FEE6E9;
+            --tf-red: #F4364C;
+            --tf-light-blue: #D1EBEC;
+            --tf-light-ivory: #FEF8E2;
+            --tf-navy: #28507B;
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--tf-navy);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           TOP BAR
+           ============================================ */
+        .top-bar {
+            background: var(--tf-light-ivory);
+            color: var(--tf-pink);
+            padding: 14px 24px;
+            text-align: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-bottom: 2px dashed var(--tf-pink);
+        }
+
+        .top-bar .heart-icon {
+            display: inline-block;
+            margin: 0 8px;
+            color: var(--tf-red);
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(180deg, var(--tf-pink) 0%, #E07A8D 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.15;
+            animation: floatHeart 6s ease-in-out infinite;
+        }
+        .floating-heart svg { fill: var(--white); }
+        .floating-heart.h1 { width: 60px; top: 10%; left: 10%; animation-delay: 0s; }
+        .floating-heart.h2 { width: 40px; top: 20%; right: 15%; animation-delay: 1s; }
+        .floating-heart.h3 { width: 50px; bottom: 30%; left: 15%; animation-delay: 2s; }
+        .floating-heart.h4 { width: 35px; bottom: 25%; right: 10%; animation-delay: 3s; }
+
+        @keyframes floatHeart {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        /* Floating fruits */
+        .hero-fruit {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .hero-fruit.f1 { width: 120px; top: 10%; left: 5%; }
+        .hero-fruit.f2 { width: 90px; top: 15%; right: 8%; }
+        .hero-fruit.f3 { width: 80px; bottom: 25%; left: 8%; }
+        .hero-fruit.f4 { width: 100px; bottom: 20%; right: 5%; }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-frame {
+            position: relative;
+            padding: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 30px;
+            border: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .hero-eyebrow {
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--tf-ivory);
+            margin-bottom: 16px;
+        }
+
+        .hero-logo {
+            width: 220px;
+            margin: 0 auto 12px;
+            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.1));
+        }
+
+        .hero-tagline {
+            font-family: 'Lora', serif;
+            font-size: clamp(36px, 8vw, 56px);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-heart-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hero-heart-divider svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--tf-ivory);
+        }
+
+        .hero-heart-divider span {
+            width: 40px;
+            height: 1px;
+            background: var(--tf-ivory);
+            opacity: 0.5;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--tf-ivory);
+            margin-bottom: 24px;
+        }
+
+        .hero-spots {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--tf-ivory);
+            background: rgba(255,255,255,0.15);
+            padding: 10px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 28px;
+            border: 1px dashed rgba(255,255,255,0.4);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--tf-ivory);
+            color: var(--tf-pink);
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 2px dashed var(--tf-ivory);
+            border-radius: 54px;
+            opacity: 0.4;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        /* ============================================
+           INTRO
+           ============================================ */
+        .intro {
+            background: var(--tf-light-ivory);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 24px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 24'%3E%3Cellipse cx='20' cy='24' rx='20' ry='24' fill='%23E68699'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 24px;
+            transform: scaleY(-1);
+        }
+
+        .intro-content {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 2px dashed var(--tf-pink);
+        }
+
+        .intro-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .intro-hearts svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--tf-pink);
+            opacity: 0.6;
+        }
+
+        .intro h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(28px, 5vw, 40px);
+            color: var(--tf-pink);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .intro p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            color: var(--tf-navy);
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        /* ============================================
+           PHOTOS - Polaroid style
+           ============================================ */
+        .photos {
+            background: var(--tf-light-pink);
+            padding: 70px 24px;
+        }
+
+        .photos-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .photos-title h3 {
+            font-family: 'Lora', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: var(--tf-pink);
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .polaroid {
+            background: var(--white);
+            padding: 12px 12px 40px 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid:nth-child(1) { transform: rotate(-3deg); }
+        .polaroid:nth-child(2) { transform: rotate(2deg); }
+        .polaroid:nth-child(3) { transform: rotate(-2deg); }
+        .polaroid:nth-child(4) { transform: rotate(3deg); }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 2;
+        }
+
+        .polaroid img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .photos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+        }
+
+        /* ============================================
+           THE LINEUP
+           ============================================ */
+        .lineup {
+            background: var(--white);
+            padding: 80px 24px;
+        }
+
+        .lineup-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .lineup-header h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(36px, 6vw, 52px);
+            color: var(--tf-pink);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .lineup-header p {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--tf-navy);
+            opacity: 0.7;
+        }
+
+        .lineup-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lineup-card {
+            background: var(--tf-light-ivory);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px dashed var(--tf-ivory);
+            transition: transform 0.3s ease;
+        }
+
+        .lineup-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lineup-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .lineup-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lineup-card-content {
+            padding: 28px;
+            text-align: center;
+        }
+
+        .lineup-card-content h3 {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: var(--tf-pink);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .lineup-card-content p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--tf-navy);
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .lineup-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+        }
+
+        /* ============================================
+           SPOTS SECTION
+           ============================================ */
+        .spots-section {
+            background: var(--tf-pink);
+            padding: 70px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .spots-inner {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 50px 40px;
+            border-radius: 24px;
+            border: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .spots-section h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(32px, 6vw, 48px);
+            color: var(--white);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .spots-count {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--tf-ivory);
+            margin-bottom: 24px;
+        }
+
+        .spots-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .spots-hearts svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--tf-ivory);
+            opacity: 0.6;
+        }
+
+        /* ============================================
+           YOU GET - Perks
+           ============================================ */
+        .perks {
+            background: var(--tf-light-ivory);
+            padding: 80px 24px;
+            position: relative;
+        }
+
+        .perks::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cellipse cx='20' cy='0' rx='20' ry='20' fill='%23E68699'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 20px;
+        }
+
+        .perks-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .perks-title h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(36px, 6vw, 52px);
+            color: var(--tf-pink);
+            font-weight: 600;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .perk-card {
+            background: var(--white);
+            padding: 35px 28px;
+            text-align: center;
+            border-radius: 16px;
+            border: 2px dashed var(--tf-pink);
+            transition: transform 0.3s ease;
+        }
+
+        .perk-card:nth-child(1) { transform: rotate(-2deg); }
+        .perk-card:nth-child(2) { transform: rotate(1deg); }
+        .perk-card:nth-child(3) { transform: rotate(-1deg); }
+
+        .perk-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .perk-card svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--tf-pink);
+            margin-bottom: 16px;
+        }
+
+        .perk-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 22px;
+            color: var(--tf-pink);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .perk-card p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--tf-navy);
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .perks-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+            }
+            .perk-card { transform: rotate(0deg) !important; }
+        }
+
+        /* ============================================
+           CTA
+           ============================================ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--tf-pink) 0%, var(--tf-red) 100%);
+            padding: 90px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-hearts {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .cta-hearts svg {
+            position: absolute;
+            fill: var(--white);
+            opacity: 0.1;
+        }
+
+        .cta-hearts svg:nth-child(1) { width: 80px; top: 10%; left: 5%; }
+        .cta-hearts svg:nth-child(2) { width: 50px; top: 20%; right: 10%; }
+        .cta-hearts svg:nth-child(3) { width: 60px; bottom: 15%; left: 12%; }
+        .cta-hearts svg:nth-child(4) { width: 40px; bottom: 25%; right: 8%; }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(40px, 8vw, 60px);
+            color: var(--white);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .cta-section p {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--tf-ivory);
+            margin-bottom: 32px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--tf-red);
+            padding: 20px 56px;
+            border-radius: 50px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--tf-navy);
+            color: var(--tf-ivory);
+            padding: 50px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cellipse cx='20' cy='0' rx='20' ry='20' fill='%23F4364C'/%3E%3C/svg%3E") repeat-x;
+            background-size: 40px 20px;
+        }
+
+        .footer-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-hearts svg {
+            width: 12px;
+            height: 12px;
+            fill: var(--tf-pink);
+            opacity: 0.6;
+        }
+
+        .footer-logo {
+            width: 110px;
+            margin: 0 auto 20px;
+        }
+
+        .footer-tagline {
+            font-family: 'Lora', serif;
+            font-size: 15px;
+            font-style: italic;
+            color: var(--tf-ivory);
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .footer p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            opacity: 0.6;
+            margin-bottom: 5px;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           MOBILE
+           ============================================ */
+        @media (max-width: 768px) {
+            .hero-fruit { opacity: 0.5; }
+            .floating-heart.h3, .floating-heart.h4 { display: none; }
+            .hero-logo { width: 180px; }
+            .hero-frame { padding: 30px 24px; }
+            .intro-content { padding: 40px 24px; }
+            .spots-inner { padding: 40px 24px; }
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        Trü Frü <span class="heart-icon">♥</span> Create · Taste · Connect
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <!-- Floating hearts -->
+        <div class="floating-heart h1"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div class="floating-heart h2"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div class="floating-heart h3"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div class="floating-heart h4"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+
+        <!-- Floating fruits -->
+        <img src="Branded assets/Strawberry_1.png" alt="" class="hero-fruit f1">
+        <img src="Branded assets/Raspberry_1.png" alt="" class="hero-fruit f2">
+        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="hero-fruit f3">
+        <img src="Branded assets/Raspberry_4 (1).png" alt="" class="hero-fruit f4">
+
+        <div class="hero-content">
+            <div class="hero-frame">
+                <p class="hero-eyebrow">Experience Trü Frü</p>
+                <img src="Branded assets/Trü Frü Logo_Ivory_long.png" alt="Trü Frü" class="hero-logo">
+                <h1 class="hero-tagline">Create · Taste · Connect</h1>
+                <div class="hero-heart-divider">
+                    <span></span>
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span></span>
+                </div>
+                <p class="hero-subtitle">Intimate workshops for fruit & chocolate lovers</p>
+                <p class="hero-spots">30 SPOTS PER SESSION ONLY</p>
+                <a href="#register" class="hero-cta">Book Your Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro reveal">
+        <div class="intro-content">
+            <div class="intro-hearts">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h2>A Delight You Didn't See Coming</h2>
+            <p>Small groups. Big experiences. Join us for hands-on workshops where you'll create, taste, and connect with fellow Trü Frü lovers.</p>
+        </div>
+    </section>
+
+    <!-- Photos -->
+    <section class="photos reveal">
+        <div class="photos-title">
+            <h3>Better Together</h3>
+        </div>
+        <div class="photos-grid">
+            <div class="polaroid"><img src="Branded assets/269A8338 (2) (2).jpg" alt=""></div>
+            <div class="polaroid"><img src="Branded assets/269A8367 (1).jpg" alt=""></div>
+            <div class="polaroid"><img src="Branded assets/269A7869 (2) (2).jpg" alt=""></div>
+            <div class="polaroid"><img src="Branded assets/269A8317.jpg" alt=""></div>
+        </div>
+    </section>
+
+    <!-- The Lineup -->
+    <section class="lineup reveal">
+        <div class="lineup-header">
+            <h2>The Sessions</h2>
+            <p>Choose your experience — each limited to 30 spots</p>
+        </div>
+        <div class="lineup-grid">
+            <div class="lineup-card">
+                <div class="lineup-card-img">
+                    <img src="Branded assets/269A8338 (2) (2).jpg" alt="Welcome">
+                </div>
+                <div class="lineup-card-content">
+                    <h3>Welcome</h3>
+                    <p>Pink carpet, photo wall, welcome cocktail, DJ, and product sampling</p>
+                </div>
+            </div>
+            <div class="lineup-card">
+                <div class="lineup-card-img">
+                    <img src="Branded assets/269A8367 (1).jpg" alt="Sweet Treats">
+                </div>
+                <div class="lineup-card-content">
+                    <h3>Sweet Treats</h3>
+                    <p>Indulge in Trü Frü tastings and discover your favourite flavour combinations</p>
+                </div>
+            </div>
+            <div class="lineup-card">
+                <div class="lineup-card-img">
+                    <img src="Branded assets/269A7869 (2) (2).jpg" alt="Phone Charms">
+                </div>
+                <div class="lineup-card-content">
+                    <h3>Phone Charms</h3>
+                    <p>Make friendship bracelets and phone charms with a local jewellery maker</p>
+                </div>
+            </div>
+            <div class="lineup-card">
+                <div class="lineup-card-img">
+                    <img src="Branded assets/269A8317.jpg" alt="Mixology">
+                </div>
+                <div class="lineup-card-content">
+                    <h3>Mixology</h3>
+                    <p>Learn three Trü Frü cocktails and take home recipe cards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spots Section -->
+    <section class="spots-section reveal">
+        <div class="spots-inner">
+            <h2>Create · Taste · Connect</h2>
+            <p class="spots-count">30 spots per session only</p>
+            <div class="spots-hearts">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- You Get -->
+    <section class="perks reveal">
+        <div class="perks-title">
+            <h2>You Get</h2>
+        </div>
+        <div class="perks-grid">
+            <div class="perk-card">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>Hands-On</h3>
+                <p>Intimate workshop experience with expert guidance</p>
+            </div>
+            <div class="perk-card">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>Take Home</h3>
+                <p>Treat bags, recipe cards, and your own creations</p>
+            </div>
+            <div class="perk-card">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <h3>Your Crew</h3>
+                <p>Bring your people or meet new favourite humans</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="register">
+        <div class="cta-hearts">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+
+        <div class="cta-content">
+            <h2>Ready?</h2>
+            <p>Spots are limited — don't miss out</p>
+            <a href="#" class="cta-btn">Book Your Spot</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-hearts">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <img src="Branded assets/Trü Frü Logo_White_long.png" alt="Trü Frü" class="footer-logo">
+        <p class="footer-tagline">Real Fruit. Real Chocolate. Ridiculously Good.</p>
+        <p>© 2026 Trü Frü · Created by Headcase</p>
+    </footer>
+
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
