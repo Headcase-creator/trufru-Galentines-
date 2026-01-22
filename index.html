@@ -131,28 +131,33 @@
             right: 10%;
             z-index: 15;
             transform: rotate(-2deg);
-            padding: 15px;
-            background: white;
+            padding: 18px;
             position: absolute;
-            --scallop-size: 12px;
-            mask:
-                radial-gradient(var(--scallop-size) at var(--scallop-size) 0, transparent 99%, white 101%)
-                    calc(50% - var(--scallop-size)) 0 / calc(2 * var(--scallop-size)) 100%,
-                radial-gradient(var(--scallop-size) at var(--scallop-size) 100%, transparent 99%, white 101%)
-                    calc(50% - var(--scallop-size)) 0 / calc(2 * var(--scallop-size)) 100%,
-                radial-gradient(var(--scallop-size) at 0 var(--scallop-size), transparent 99%, white 101%)
-                    0 calc(50% - var(--scallop-size)) / 100% calc(2 * var(--scallop-size)),
-                radial-gradient(var(--scallop-size) at 100% var(--scallop-size), transparent 99%, white 101%)
-                    0 calc(50% - var(--scallop-size)) / 100% calc(2 * var(--scallop-size));
-            -webkit-mask:
-                radial-gradient(var(--scallop-size) at var(--scallop-size) 0, transparent 99%, white 101%)
-                    calc(50% - var(--scallop-size)) 0 / calc(2 * var(--scallop-size)) 100%,
-                radial-gradient(var(--scallop-size) at var(--scallop-size) 100%, transparent 99%, white 101%)
-                    calc(50% - var(--scallop-size)) 0 / calc(2 * var(--scallop-size)) 100%,
-                radial-gradient(var(--scallop-size) at 0 var(--scallop-size), transparent 99%, white 101%)
-                    0 calc(50% - var(--scallop-size)) / 100% calc(2 * var(--scallop-size)),
-                radial-gradient(var(--scallop-size) at 100% var(--scallop-size), transparent 99%, white 101%)
-                    0 calc(50% - var(--scallop-size)) / 100% calc(2 * var(--scallop-size));
+            background:
+                radial-gradient(circle at 50% 0, white 18px, transparent 18px),
+                radial-gradient(circle at 50% 100%, white 18px, transparent 18px),
+                radial-gradient(circle at 0 50%, white 18px, transparent 18px),
+                radial-gradient(circle at 100% 50%, white 18px, transparent 18px),
+                linear-gradient(white, white);
+            background-size:
+                36px 18px,
+                36px 18px,
+                18px 36px,
+                18px 36px,
+                calc(100% - 18px) calc(100% - 18px);
+            background-position:
+                top center,
+                bottom center,
+                left center,
+                right center,
+                center;
+            background-repeat:
+                repeat-x,
+                repeat-x,
+                repeat-y,
+                repeat-y,
+                no-repeat;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
         }
 
         .hero-main img {
@@ -160,7 +165,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            border-radius: 3px;
         }
         
         /* Title Block - CLEAR SPACE */
@@ -657,7 +661,31 @@
             }
 
             .hero-main {
-                background: #E68699;
+                background:
+                    radial-gradient(circle at 50% 0, #E68699 14px, transparent 14px),
+                    radial-gradient(circle at 50% 100%, #E68699 14px, transparent 14px),
+                    radial-gradient(circle at 0 50%, #E68699 14px, transparent 14px),
+                    radial-gradient(circle at 100% 50%, #E68699 14px, transparent 14px),
+                    linear-gradient(#E68699, #E68699) !important;
+                background-size:
+                    28px 14px,
+                    28px 14px,
+                    14px 28px,
+                    14px 28px,
+                    calc(100% - 14px) calc(100% - 14px) !important;
+                background-position:
+                    top center,
+                    bottom center,
+                    left center,
+                    right center,
+                    center !important;
+                background-repeat:
+                    repeat-x,
+                    repeat-x,
+                    repeat-y,
+                    repeat-y,
+                    no-repeat !important;
+                padding: 14px !important;
             }
 
             .title-block {
@@ -861,13 +889,37 @@
             }
 
             .hero-main {
-                background: #E68699;
+                background:
+                    radial-gradient(circle at 50% 0, #E68699 12px, transparent 12px),
+                    radial-gradient(circle at 50% 100%, #E68699 12px, transparent 12px),
+                    radial-gradient(circle at 0 50%, #E68699 12px, transparent 12px),
+                    radial-gradient(circle at 100% 50%, #E68699 12px, transparent 12px),
+                    linear-gradient(#E68699, #E68699) !important;
+                background-size:
+                    24px 12px,
+                    24px 12px,
+                    12px 24px,
+                    12px 24px,
+                    calc(100% - 12px) calc(100% - 12px) !important;
+                background-position:
+                    top center,
+                    bottom center,
+                    left center,
+                    right center,
+                    center !important;
+                background-repeat:
+                    repeat-x,
+                    repeat-x,
+                    repeat-y,
+                    repeat-y,
+                    no-repeat !important;
+                padding: 12px !important;
             }
 
             .cta-hero button {
                 font-size: 18px;
             }
-            
+
             .quote-block p {
                 font-size: 20px;
             }
