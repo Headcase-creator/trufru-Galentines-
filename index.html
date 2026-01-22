@@ -585,6 +585,11 @@
             display: none !important;
         }
 
+        /* Desktop: hide mobile strawberries */
+        .mobile-strawberry {
+            display: none !important;
+        }
+
         @media (max-width: 768px) {
             /* Show mobile-only, hide desktop-only on mobile */
             .mobile-only {
@@ -698,14 +703,29 @@
                 letter-spacing: 2px;
             }
             
-            /* Floating Hearts/Strawberries - hide on mobile */
+            /* Floating Hearts/Strawberries - smaller on mobile */
             .floating-heart {
                 display: none !important;
             }
-            
-            /* Cute Decorations - hide on mobile to prevent overlaps */
+
+            /* Cute Decorations - smaller and more subtle on mobile */
             .cute-decoration {
-                display: none !important;
+                width: 25px !important;
+                opacity: 0.5 !important;
+            }
+
+            /* Mobile floating strawberries */
+            .mobile-strawberry {
+                display: block !important;
+                position: fixed !important;
+                pointer-events: none;
+                z-index: 100;
+                animation: floatSoft 4s ease-in-out infinite;
+            }
+
+            @keyframes floatSoft {
+                0%, 100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-8px) rotate(5deg); }
             }
             
             /* Section Titles */
@@ -851,6 +871,19 @@
     </style>
 </head>
 <body>
+    <!-- Mobile Floating Strawberries - Different Sizes -->
+    <img src="Branded assets/Strawberry_1.png" alt="" class="mobile-strawberry" style="top: 8%; left: -8px; width: 45px; opacity: 0.7; animation-delay: 0s;">
+    <img src="Branded assets/Strawberry_2 (1).png" alt="" class="mobile-strawberry" style="top: 18%; right: -10px; width: 35px; opacity: 0.6; animation-delay: 0.5s;">
+    <img src="Branded assets/Strawberry_1.png" alt="" class="mobile-strawberry" style="top: 32%; left: -6px; width: 28px; opacity: 0.55; animation-delay: 1s;">
+    <img src="Branded assets/Strawberry_2 (1).png" alt="" class="mobile-strawberry" style="top: 45%; right: -8px; width: 40px; opacity: 0.65; animation-delay: 1.5s;">
+    <img src="Branded assets/Strawberry_1.png" alt="" class="mobile-strawberry" style="top: 58%; left: -10px; width: 32px; opacity: 0.6; animation-delay: 2s;">
+    <img src="Branded assets/Strawberry_2 (1).png" alt="" class="mobile-strawberry" style="top: 72%; right: -6px; width: 50px; opacity: 0.7; animation-delay: 2.5s;">
+    <img src="Branded assets/Strawberry_1.png" alt="" class="mobile-strawberry" style="top: 85%; left: -8px; width: 38px; opacity: 0.6; animation-delay: 3s;">
+    <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="mobile-strawberry" style="top: 25%; left: -5px; width: 30px; opacity: 0.5; animation-delay: 0.8s;">
+    <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="mobile-strawberry" style="top: 65%; right: -5px; width: 25px; opacity: 0.45; animation-delay: 1.8s;">
+    <img src="Branded assets/Raspberry_1.png" alt="" class="mobile-strawberry" style="top: 40%; left: -4px; width: 22px; opacity: 0.5; animation-delay: 2.2s;">
+    <img src="Branded assets/Raspberry_1.png" alt="" class="mobile-strawberry" style="top: 78%; right: -4px; width: 20px; opacity: 0.45; animation-delay: 3.2s;">
+
     <div class="top-strip">
         8 February 2026 · Trü Frü Galentine's · Dublin
     </div>
