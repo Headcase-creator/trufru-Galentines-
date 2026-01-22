@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventbrite Banner - Trü Frü Galentine's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir', 'Avenir Next', Arial, sans-serif;
+            background: #333;
+        }
+
+        .banner {
+            width: 2160px;
+            height: 1080px;
+            background: linear-gradient(135deg, #E68699 0%, #F4A5B5 50%, #E68699 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .date-location {
+            position: absolute;
+            bottom: 100px;
+            left: 80px;
+            background: white;
+            padding: 25px 50px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .date-location h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: #E68699;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .date-location p {
+            font-size: 28px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .girls-image {
+            position: absolute;
+            right: 50px;
+            bottom: 0;
+            height: 1000px;
+            width: auto;
+            border-radius: 20px 20px 0 0;
+            box-shadow: -8px 0 30px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .decoration {
+            position: absolute;
+            z-index: 5;
+        }
+
+        .deco-1 {
+            top: 50px;
+            right: 700px;
+            width: 100px;
+            transform: rotate(-15deg);
+        }
+
+        .deco-2 {
+            bottom: 300px;
+            left: 900px;
+            width: 90px;
+            transform: rotate(10deg);
+        }
+
+        .deco-3 {
+            top: 400px;
+            left: 100px;
+            width: 80px;
+            transform: rotate(20deg);
+        }
+
+        .deco-4 {
+            top: 200px;
+            left: 700px;
+            width: 85px;
+            transform: rotate(-10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- Logo -->
+        <img src="trufru galentines assets /NewLargeTruFruGalentineslogo.png" alt="Trü Frü Galentine's" class="logo-img">
+
+        <!-- Date and Location -->
+        <div class="date-location">
+            <h3>8 FEBRUARY 2026</h3>
+            <p>Hen's Teeth · Blackpitts, Dublin 8</p>
+        </div>
+
+        <!-- Girls image -->
+        <img src="girls-with-bags.png" alt="Girls with Trü Frü bags" class="girls-image">
+
+        <!-- Decorative elements -->
+        <img src="trufru galentines assets /cute things /Asset 7strawberry.png" alt="" class="decoration deco-1">
+        <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="decoration deco-2">
+        <img src="trufru galentines assets /cute things /Asset 7strawberry.png" alt="" class="decoration deco-3">
+        <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="decoration deco-4">
+    </div>
+</body>
+</html>
