@@ -763,10 +763,22 @@
                 display: none !important;
             }
 
-            /* Cute Decorations - smaller and more subtle on mobile */
+            /* Cute Decorations - smaller, more subtle, and moved towards center on mobile */
             .cute-decoration {
                 width: 25px !important;
                 opacity: 0.5 !important;
+            }
+
+            /* Move hero page decorations towards center to avoid overlap with floating strawberries */
+            .hero-collage .cute-decoration {
+                left: 15% !important;
+                right: 15% !important;
+            }
+
+            /* Move CTA page decorations towards center to avoid overlap with floating strawberries */
+            .final-cta .cute-decoration {
+                left: 18% !important;
+                right: 18% !important;
             }
 
             /* Mobile floating strawberries */
