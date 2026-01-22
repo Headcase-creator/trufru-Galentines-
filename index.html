@@ -618,6 +618,19 @@
             display: none !important;
         }
 
+        /* Desktop-only position adjustments for floating strawberries */
+        @media (min-width: 769px) {
+            /* CTA page: Move top-left strawberry 80% down and 25% right */
+            .cta-strawberry-topleft {
+                top: 95% !important;
+                left: 37% !important;
+            }
+            /* Hero page: Move right-side strawberry 10% more to the right */
+            .hero-strawberry-right {
+                right: 22% !important;
+            }
+        }
+
         @media (max-width: 768px) {
             /* Show mobile-only, hide desktop-only on mobile */
             .mobile-only {
@@ -1018,7 +1031,7 @@
         <img src="Branded assets/Strawberry_1.png" alt="" class="floating-heart" style="top: 8%; left: 28%; width: 85px;">
         <img src="Branded assets/Strawberry_2 (1).png" alt="" class="floating-heart" style="top: 10%; right: 30%; width: 95px;">
         <img src="Branded assets/Strawberry_1.png" alt="" class="floating-heart" style="top: 50%; left: 32%; width: 75px;">
-        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="floating-heart" style="top: 65%; right: 32%; width: 80px;">
+        <img src="Branded assets/Strawberry_2 (1).png" alt="" class="floating-heart hero-strawberry-right" style="top: 65%; right: 32%; width: 80px;">
         <img src="Branded assets/Strawberry_1.png" alt="" class="floating-heart" style="top: 3%; right: 10%; width: 65px;">
         <img src="Branded assets/Strawberry_2 (1).png" alt="" class="floating-heart" style="top: 25%; right: 6%; width: 50px;">
         <img src="Branded assets/Strawberry_1.png" alt="" class="floating-heart" style="top: 35%; left: 2%; width: 70px;">
@@ -1121,7 +1134,7 @@
     <section class="final-cta" style="position: relative; overflow: hidden;">
 
         <!-- Floating strawberries and cute decorations - reduced by 50% -->
-        <img src="Branded assets/Strawberry_1.png" alt="" class="cute-decoration" style="position: absolute; top: 15%; left: 12%; width: 70px; opacity: 0.75; transform: rotate(10deg); z-index: 1;">
+        <img src="Branded assets/Strawberry_1.png" alt="" class="cute-decoration cta-strawberry-topleft" style="position: absolute; top: 15%; left: 12%; width: 70px; opacity: 0.75; transform: rotate(10deg); z-index: 1;">
         <img src="Branded assets/Strawberry_1.png" alt="" class="cute-decoration cta-strawberry-right" style="position: absolute; bottom: 25%; right: 6%; width: 60px; opacity: 0.7; transform: rotate(20deg); z-index: 1;">
         <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="cute-decoration" style="position: absolute; top: 10%; right: 5%; width: 55px; opacity: 0.75; transform: rotate(10deg); z-index: 1;">
         <img src="trufru galentines assets /cute things /Asset 4flower.png" alt="" class="cute-decoration" style="position: absolute; bottom: 15%; right: 3%; width: 45px; opacity: 0.75; transform: rotate(-10deg); z-index: 1;">
