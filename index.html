@@ -605,6 +605,12 @@
             .hero-collage {
                 min-height: auto;
                 padding: 30px 15px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .hero-collage .hero-main {
+                order: 2;
             }
             
             .cutout, .info-block, .date-info, .quote-block, .cta-hero {
@@ -630,6 +636,7 @@
                 top: auto !important;
                 left: auto !important;
                 text-align: center;
+                order: 1;
             }
             
             .title-block h1 {
