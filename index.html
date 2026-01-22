@@ -627,8 +627,9 @@
             
             .hero-main, .photo-2, .photo-3 {
                 height: 280px;
+                border-color: #E68699;
             }
-            
+
             .title-block {
                 width: 95%;
                 margin: 15px auto;
@@ -699,13 +700,12 @@
             
             /* Floating Hearts/Strawberries - hide on mobile */
             .floating-heart {
-                display: none;
+                display: none !important;
             }
             
-            /* Cute Decorations - smaller on mobile */
+            /* Cute Decorations - hide on mobile to prevent overlaps */
             .cute-decoration {
-                width: 40px !important;
-                opacity: 0.6 !important;
+                display: none !important;
             }
             
             /* Section Titles */
@@ -813,8 +813,9 @@
             
             .hero-main, .photo-2, .photo-3 {
                 height: 220px;
+                border-color: #E68699;
             }
-            
+
             .cta-hero button {
                 font-size: 18px;
             }
